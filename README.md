@@ -1,4 +1,4 @@
-# Interview Preparation
+# Crash Course Computer Science
 
 > Quick notes to brush up computer science fundamentals and practice.
 
