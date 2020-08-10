@@ -15,9 +15,10 @@ I am making my notes in jupyter lab for learning as well as practice.
 6. Design Patterns
 7. Computer Organisation And Architecture
 8. Operating System
-9. Computer Networks
+9.  Computer Networks
 10. Cryptography
-11. System Design, Scalability, Data Handling
-12. Testing
-13. NP, NP-Complete and Approximation Algorithms
-14. Information Theory
+11. Database Design
+12. [System Design](12-system-design/README.md)
+13. Testing
+14. NP, NP-Complete and Approximation Algorithms
+15. Information Theory
