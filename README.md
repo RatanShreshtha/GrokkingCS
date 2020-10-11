@@ -1,4 +1,4 @@
-# Crash Course Computer Science
+# GrokkingCS
 
 > Quick notes to brush up computer science fundamentals and practice.
 
