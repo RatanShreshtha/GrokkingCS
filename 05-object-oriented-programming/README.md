@@ -1,6 +1,6 @@
 # Introduction
 
-Object Oriented programming (OOP) is a programming paradigm that relies on the concept of classes and objects. In Object Oriented programming (OOP) related pieces of information and behaviors are grouped together into a template called a **class**. Then individual **objects** are created from the class template. The entire software program runs by having multiple objects interact with objects to create the larger program.
+Object Oriented Programming (OOP) is a programming paradigm that relies on the concept of classes and objects. In Object Oriented programming (OOP) related pieces of information and behaviors are grouped together into a template called a **class**. Then individual **objects** are created from the class template. The entire software program runs by having multiple objects interact with objects to create the larger program.
 
 ## Why OOP?
 
@@ -20,9 +20,10 @@ Attributes are the information that is stored. Attributes are defined in the Cla
 ### methods
 Methods represent behaviors. Methods perform actions; methods might return information about an object, or update an object’s data. The method’s code is defined in the class definition. 
 
+![Object Oriented Programming](./images/oop.png)
 
 ## Table of Contents
-- [Encapsulation](./encapsulation.ipynb)
-- [Abstraction](./abstraction.ipynb)
-- [Inheritance](./inheritance.ipynb)
-- [Polymorphism](./polymorphism.ipynb)
+- [Encapsulation](./encapsulation.ipynb): containing information in an object, exposing only selected information.
+- [Abstraction](./abstraction.ipynb): only exposing high level public methods for accessing an object.
+- [Inheritance](./inheritance.ipynb): child classes inherit data and behaviors from parent class.
+- [Polymorphism](./polymorphism.ipynb): many methods can do the same task.
