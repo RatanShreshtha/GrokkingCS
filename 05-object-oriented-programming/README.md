@@ -27,3 +27,7 @@ Methods represent behaviors. Methods perform actions; methods might return infor
 - [Abstraction](./abstraction.ipynb): only exposing high level public methods for accessing an object.
 - [Inheritance](./inheritance.ipynb): child classes inherit data and behaviors from parent class.
 - [Polymorphism](./polymorphism.ipynb): many methods can do the same task.
+
+## Bonus Material
+
+[![Anjana Vakil - Oops! OOP's not what I thought | Øredev 2018](http://img.youtube.com/vi/qMdxExJCD5s/0.jpg)](http://www.youtube.com/watch?v=qMdxExJCD5s "Anjana Vakil - Oops! OOP's not what I thought | Øredev 2018")
