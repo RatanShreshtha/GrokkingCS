@@ -12,6 +12,7 @@ Implementation of an ADT, is referred as **data structure**, will require that w
 
 ## Table of Contents
 
+0. [Introduction](./introduction.ipynb)
 1. [Stack](stack.ipynb)
 2. [Queue](queue.ipynb)
 3. [Deque](deque.ipynb)
