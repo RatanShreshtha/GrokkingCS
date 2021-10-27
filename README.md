@@ -10,7 +10,7 @@
   <p align="center">
     A computer science guide for people in hurry.
     <br />
-    <a href="https://ratanshreshtha.github.com/GrokkingCS"><strong>Explore The Book</strong></a>
+    <a href="https://ratanshreshtha.github.io/GrokkingCS/intro.html"><strong>Explore The Book</strong></a>
     <br />
     <br />
     <a href="https://github.com/RatanShreshtha/GrokkingCS">Repository</a>
