@@ -1,0 +1,17 @@
+format: jb-book
+root: intro
+chapters:
+- file: basic-programming/intro
+- file: mathematics/intro
+- file: data-structures/intro
+- file: algorithms/intro
+- file: object-oriented-programming/intro
+- file: computer-organisation-and-architecture/intro
+- file: operating-system/intro
+- file: design-patterns/intro
+- file: system-design/intro
+- file: database-design/intro
+- file: computer-networks/intro
+- file: cryptography/intro
+- file: information-theory/intro
+- file: testing/intro
