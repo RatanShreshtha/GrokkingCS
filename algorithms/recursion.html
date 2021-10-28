@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Algorithms &#8212; GrokkingCS</title>
+    <title>Recursion &#8212; GrokkingCS</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Searching" href="sorting-and-searching.html" />
-    <link rel="prev" title="Graph" href="../data-structures/graph.html" />
+    <link rel="next" title="Dynamic Programming" href="dynamic-programming.html" />
+    <link rel="prev" title="Searching" href="sorting-and-searching.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -162,7 +162,7 @@
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="intro.html">
    Algorithms
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -170,14 +170,14 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="sorting-and-searching.html">
      Searching
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="recursion.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Recursion
     </a>
    </li>
@@ -306,9 +306,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/algorithms/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/algorithms/recursion.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -326,7 +326,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/RatanShreshtha/GrokkingCS/issues/new?title=Issue%20on%20page%20%2Falgorithms/intro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/RatanShreshtha/GrokkingCS/issues/new?title=Issue%20on%20page%20%2Falgorithms/recursion.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -342,6 +342,23 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/RatanShreshtha/GrokkingCS/main?urlpath=tree/docs/algorithms/recursion.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -353,9 +370,43 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-should-i-study-algorithms">
-   Why should I study algorithms?
+  <a class="reference internal nav-link" href="#three-laws-of-recursion">
+   Three Laws of Recursion
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stack-frames-implementing-recursion">
+   Stack Frames: Implementing Recursion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizing-recursion">
+   Visualizing Recursion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sierpinski-triangle">
+     Sierpinski Triangle
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#complex-recursive-problems">
+   Complex Recursive Problems
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tower-of-hanoi">
+     Tower of Hanoi
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exploring-a-maze">
+     Exploring a Maze
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -368,19 +419,101 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="algorithms">
-<h1>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h1>
-<p>Algorithms are a step-by-step list of instructions for solving any instance of the problem that might arise. Algorithms are finite processes that if followed will solve the problem. Algorithms are solutions.</p>
-<p>Programming is the process of taking an algorithm and encoding it into a notation, a programming language, so that it can be executed by a computer. Although many programming languages and many different types of computers exist, the important first step is the need to have the solution. Without an algorithm there can be no program.</p>
-<p><strong>At a minimum, algorithms require constructs that perform sequential processing, selection for decision-making, and iteration for repetitive control. As long as the language provides these basic statements, it can be used for algorithm representation.</strong></p>
-<p>All data items in the computer are represented as strings of binary digits. In order to give these strings meaning, we need to have data types. Data types provide an interpretation for this binary data so that we can think about the data in terms that make sense with respect to the problem being solved. These low-level, built-in data types (sometimes called the primitive data types) provide the building blocks for algorithm development.</p>
-<div class="section" id="why-should-i-study-algorithms">
-<h2>Why should I study algorithms?<a class="headerlink" href="#why-should-i-study-algorithms" title="Permalink to this headline">¶</a></h2>
-<p>Algorithms are often quite different from one another. One algorithm may use many fewer resources than another. One algorithm might take 10 times as long to return the result as the other. We would like to have some way to compare these two solutions. Even though they both work, one is perhaps “better” than the other. We might suggest that one is more efficient or that one simply works faster or uses less memory. As we study algorithms, we can learn analysis techniques that allow us to compare and contrast solutions based solely on their own characteristics, not the characteristics of the program or computer used to implement them.</p>
-<p>In the worst case scenario, we may have a problem that is intractable, meaning that there is no algorithm that can solve the problem in a realistic amount of time. It is important to be able to distinguish between those problems that have solutions, those that do not, and those where solutions exist but require too much time or other resources to work reasonably.</p>
-<p>There will often be trade-offs that we will need to identify and decide upon. As computer scientists, in addition to our ability to solve problems, we will also need to know and understand solution evaluation techniques. In the end, there are often many ways to solve a problem. Finding a solution and then deciding whether it is a good one are tasks that we will do over and over again.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="recursion">
+<h1>Recursion<a class="headerlink" href="#recursion" title="Permalink to this headline">¶</a></h1>
+<p>Recursion is a method of solving problems that involves breaking a problem down into smaller and smaller subproblems until you get to a small enough problem that it can be solved trivially.</p>
+<p>Usually recursion involves a function calling itself, recursion allows us to write elegant solutions to problems that may otherwise be very difficult to program.</p>
+<div class="section" id="three-laws-of-recursion">
+<h2>Three Laws of Recursion<a class="headerlink" href="#three-laws-of-recursion" title="Permalink to this headline">¶</a></h2>
+<p>All recursive algorithms must obey three important laws:</p>
+<ul class="simple">
+<li><p>A recursive algorithm must have a <strong>base case</strong>.</p></li>
+<li><p>A recursive algorithm must change its state and move toward the base case.</p></li>
+<li><p>A recursive algorithm must call itself, recursively.</p></li>
+</ul>
+<p>A <strong>base case</strong> is typically a problem that is small enough to solve directly.</p>
+<p>To obey the second law, we must arrange for a change of state that moves the algorithm toward the base case. A change of state means that some data that the algorithm is using is modified. Usually the data that represents our problem gets smaller in some way.</p>
+<p>The final law is that the algorithm must call itself. This is the very definition of recursion, functions are good because you can take a large problem and break it up into smaller problems. The logic of recursion is an elegant expression of solving a problem by breaking it down into a smaller and easier problems.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert_to_base</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
+   <span class="n">base_digits</span> <span class="o">=</span> <span class="s2">&quot;0123456789ABCDEF&quot;</span>
+   
+   <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">base</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">base_digits</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">convert_to_base</span><span class="p">(</span><span class="n">n</span><span class="o">//</span><span class="n">base</span><span class="p">,</span><span class="n">base</span><span class="p">)</span> <span class="o">+</span> <span class="n">base_digits</span><span class="p">[</span><span class="n">n</span><span class="o">%</span><span class="k">base</span>]
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">convert_to_base</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">convert_to_base</span><span class="p">(</span><span class="mi">1453</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1010
+5AD
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="stack-frames-implementing-recursion">
+<h2>Stack Frames: Implementing Recursion<a class="headerlink" href="#stack-frames-implementing-recursion" title="Permalink to this headline">¶</a></h2>
+<p>When a function is called in Python, a stack frame is allocated to handle the local variables of the function. When the function returns, the return value is left on top of the stack for the calling function to access.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">toStr</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">base</span><span class="p">):</span>
+   <span class="n">convertString</span> <span class="o">=</span> <span class="s2">&quot;0123456789ABCDEF&quot;</span>
+   <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">base</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">convertString</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">toStr</span><span class="p">(</span><span class="n">n</span><span class="o">//</span><span class="n">base</span><span class="p">,</span><span class="n">base</span><span class="p">)</span> <span class="o">+</span> <span class="n">convertString</span><span class="p">[</span><span class="n">n</span><span class="o">%</span><span class="n">base</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">toStr</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><img alt="Stack Frames" src="https://runestone.academy/runestone/books/published/pythonds/_images/newcallstack.png" /></p>
+</div>
+<div class="section" id="visualizing-recursion">
+<h2>Visualizing Recursion<a class="headerlink" href="#visualizing-recursion" title="Permalink to this headline">¶</a></h2>
+<p>Fractals come from a branch of mathematics, and have much in common with recursion. The definition of a fractal is that when you look at it the fractal has the same basic shape no matter how much you magnify it. Some examples from nature are the coastlines of continents, snowflakes, mountains, and even trees or shrubs.</p>
+<div class="section" id="sierpinski-triangle">
+<h3>Sierpinski Triangle<a class="headerlink" href="#sierpinski-triangle" title="Permalink to this headline">¶</a></h3>
+<p>Sierpinski triangle illustrates a three-way recursive algorithm. The procedure for drawing a Sierpinski triangle by hand is simple. Start with a single large triangle. Divide this large triangle into four new triangles by connecting the midpoint of each side. Ignoring the middle triangle that you just created, apply the same procedure to each of the three corner triangles. Each time you create a new set of triangles, you recursively apply this procedure to the three smaller corner triangles. You can continue to apply this procedure indefinitely if you have a sharp enough pencil.</p>
+</div>
+</div>
+<div class="section" id="complex-recursive-problems">
+<h2>Complex Recursive Problems<a class="headerlink" href="#complex-recursive-problems" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tower-of-hanoi">
+<h3>Tower of Hanoi<a class="headerlink" href="#tower-of-hanoi" title="Permalink to this headline">¶</a></h3>
+<p>The Tower of Hanoi puzzle was invented by the French mathematician Edouard Lucas in 1883. He was inspired by a legend that tells of a Hindu temple where the puzzle was presented to young priests. At the beginning of time, the priests were given three poles and a stack of 64 gold disks, each disk a little smaller than the one beneath it. Their assignment was to transfer all 64 disks from one of the three poles to another, with two important constraints. They could only move one disk at a time, and they could never place a larger disk on top of a smaller one. The priests worked very efficiently, day and night, moving one disk every second. When they finished their work, the legend said, the temple would crumble into dust and the world would vanish.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tower_of_hanoi</span><span class="p">(</span><span class="n">num_discs</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">destination</span><span class="p">,</span> <span class="n">auxiliary</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num_discs</span> <span class="o">&gt;=</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">tower_of_hanoi</span><span class="p">(</span><span class="n">num_discs</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">auxiliary</span><span class="p">,</span> <span class="n">destination</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Move disc from </span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">destination</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">tower_of_hanoi</span><span class="p">(</span><span class="n">num_discs</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">auxiliary</span><span class="p">,</span> <span class="n">destination</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
+
+<span class="n">tower_of_hanoi</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Move disc from A to B
+Move disc from A to C
+Move disc from B to C
+Move disc from A to B
+Move disc from C to A
+Move disc from C to B
+Move disc from A to B
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exploring-a-maze">
+<h3>Exploring a Maze<a class="headerlink" href="#exploring-a-maze" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 </div>
 
@@ -414,19 +547,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../data-structures/graph.html" title="previous page">
+        <a class="left-prev" href="sorting-and-searching.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Graph</p>
+                <p class="prevnext-title">Searching</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="sorting-and-searching.html" title="next page">
+        <a class="right-next" href="dynamic-programming.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Searching</p>
+                <p class="prevnext-title">Dynamic Programming</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

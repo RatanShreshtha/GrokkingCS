@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Object Oriented Programming &#8212; GrokkingCS</title>
+    <title>Encapsulation &#8212; GrokkingCS</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Encapsulation" href="encapsulation.html" />
-    <link rel="prev" title="Dynamic Programming" href="../algorithms/dynamic-programming.html" />
+    <link rel="next" title="Abstraction" href="abstraction.html" />
+    <link rel="prev" title="Object Oriented Programming" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -189,7 +189,7 @@
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="intro.html">
    Object Oriented Programming
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -197,9 +197,9 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="encapsulation.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Encapsulation
     </a>
    </li>
@@ -306,9 +306,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/object-oriented-programming/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/object-oriented-programming/encapsulation.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -326,7 +326,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/RatanShreshtha/GrokkingCS/issues/new?title=Issue%20on%20page%20%2Fobject-oriented-programming/intro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/RatanShreshtha/GrokkingCS/issues/new?title=Issue%20on%20page%20%2Fobject-oriented-programming/encapsulation.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -342,6 +342,23 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/RatanShreshtha/GrokkingCS/main?urlpath=tree/docs/object-oriented-programming/encapsulation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -353,40 +370,8 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-oop">
-   Why OOP?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-blocks-of-oop">
-   Building blocks of OOP
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#classes">
-     classes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objects">
-     objects
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#attributes">
-     attributes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#methods">
-     methods
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bonus-material">
-   Bonus Material
+  <a class="reference internal nav-link" href="#benefits-of-encapsulation">
+   Benefits of encapsulation:
   </a>
  </li>
 </ul>
@@ -400,51 +385,25 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="object-oriented-programming">
-<h1>Object Oriented Programming<a class="headerlink" href="#object-oriented-programming" title="Permalink to this headline">¶</a></h1>
-<p>Object Oriented Programming (OOP) is a programming paradigm that relies on the concept of classes and objects. In Object Oriented programming (OOP) related pieces of information and behaviors are grouped together into a template called a <strong>class</strong>. Then individual <strong>objects</strong> are created from the class template. The entire software program runs by having multiple objects interact with objects to create the larger program.</p>
-<div class="section" id="why-oop">
-<h2>Why OOP?<a class="headerlink" href="#why-oop" title="Permalink to this headline">¶</a></h2>
-<p>OOP makes code organized, reusable, and easy to maintain. It follows the DRY (Don’t Repeat Yourself) principle used by many programmers to make efficient programs. OOP also prevents unwanted access to data, or exposing proprietary code through encapsulation and abstraction.</p>
-</div>
-<div class="section" id="building-blocks-of-oop">
-<h2>Building blocks of OOP<a class="headerlink" href="#building-blocks-of-oop" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="classes">
-<h3>classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
-<p>Classes contain fields for attributes, and methods for behaviors. Classes are where the programmer creates a blueprint for the structure of methods and attributes.</p>
-</div>
-<div class="section" id="objects">
-<h3>objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h3>
-<p>Objects are instances of classes created with specific data.</p>
-</div>
-<div class="section" id="attributes">
-<h3>attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
-<p>Attributes are the information that is stored. Attributes are defined in the Class template. The state of an object is defined by the data in the object’s attributes fields.</p>
-</div>
-<div class="section" id="methods">
-<h3>methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
-<p>Methods represent behaviors. Methods perform actions; methods might return information about an object, or update an object’s data. The method’s code is defined in the class definition.</p>
-<p><img alt="Object Oriented Programming" src="object-oriented-programming/images/oop.png" /></p>
-</div>
-</div>
-<div class="section" id="bonus-material">
-<h2>Bonus Material<a class="headerlink" href="#bonus-material" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p>Oops! OOP’s not what I thought</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="encapsulation">
+<h1>Encapsulation<a class="headerlink" href="#encapsulation" title="Permalink to this headline">¶</a></h1>
+<p>Encapsulation is containing all important information inside an object, and only exposing selected information to the outside world. Attributes and behaviors are defined by code inside the class template. Encapsulation hides the internal software code implementation inside a class, and hides internal data of inside objects. Encapsulation requires defining some fields as private and some as public.</p>
 <ul class="simple">
-<li><p>By Anjana Vakil</p></li>
+<li><p>Private/ Internal interface – methods and properties, accessible from other methods of the same class.</p></li>
+<li><p>Public / External Interface – methods and properties, accessible also from outside the class.</p></li>
 </ul>
-<p><a class="reference external" href="http://www.youtube.com/watch?v=qMdxExJCD5s"><img alt="Oops! OOP's not what I thought" src="http://img.youtube.com/vi/qMdxExJCD5s/0.jpg" /></a></p>
-</li>
-<li><p>Object Oriented Programming from scratch</p>
+<p>Let’s use a car as a metaphor for encapsulation. The information the car shares with the outside world - through blinkers to indicate turns, are public interfaces. In contrast, the engine is hidden under the hood - it’s a private, internal interface. When you’re driving a car down the road, other drivers require information to make decisions, like whether you’re turning left or right. However, exposing internal, private data like the engine temperature, would just confuse other drivers.</p>
+<p><img alt="encapsulation" src="object-oriented-programming/images/encapsulation.png" /></p>
+<div class="section" id="benefits-of-encapsulation">
+<h2>Benefits of encapsulation:<a class="headerlink" href="#benefits-of-encapsulation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>By Raymond Hettinger</p></li>
+<li><p>Adds security: Only public methods and attributes are accessible from the outside</p></li>
+<li><p>Protects developers from common mistakes: Only public fields &amp; methods accessible, so developers don’t accidentally change something dangerous</p></li>
+<li><p>Protects IP: Code is hidden in a class, only public methods are accessible by the outside developers</p></li>
+<li><p>Supportable: Most code undergoes updates and improvements</p></li>
+<li><p>Change internal code in class without alerting users: As long as the public attributes &amp; methods stay the same, internal code can be updated without changing existing objects</p></li>
+<li><p>Hides complexity: No one can see what’s behind the object’s curtain!</p></li>
 </ul>
-<p><a class="reference external" href="http://www.youtube.com/watch?v=8moWQ1561FY"><img alt="Object Oriented Programming from scratch" src="http://img.youtube.com/vi/8moWQ1561FY/0.jpg" /></a></p>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -478,19 +437,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../algorithms/dynamic-programming.html" title="previous page">
+        <a class="left-prev" href="intro.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Dynamic Programming</p>
+                <p class="prevnext-title">Object Oriented Programming</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="encapsulation.html" title="next page">
+        <a class="right-next" href="abstraction.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Encapsulation</p>
+                <p class="prevnext-title">Abstraction</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

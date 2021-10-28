@@ -1,0 +1,607 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Programming &#8212; GrokkingCS</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Object Oriented Programming" href="../object-oriented-programming/intro.html" />
+    <link rel="prev" title="Recursion" href="recursion.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">GrokkingCS</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   GrokkingCS
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../basic-programming/intro.html">
+   Basic Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mathematics/intro.html">
+   Mathematics
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../data-structures/intro.html">
+   Data Structures
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-structures/stack.html">
+     Stack
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-structures/queue.html">
+     Queue
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-structures/deque.html">
+     Deque
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-structures/list.html">
+     Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-structures/tree.html">
+     Trees
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-structures/heap.html">
+     Heap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-structures/priority-queue.html">
+     Priority Queue
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-structures/hash-table.html">
+     Hash Table
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../data-structures/graph.html">
+     Graph
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Algorithms
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="sorting-and-searching.html">
+     Searching
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="recursion.html">
+     Recursion
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Dynamic Programming
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../object-oriented-programming/intro.html">
+   Object Oriented Programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../object-oriented-programming/encapsulation.html">
+     Encapsulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../object-oriented-programming/abstraction.html">
+     Abstraction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../object-oriented-programming/inheritance.html">
+     Inheritance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../object-oriented-programming/polymorphism.html">
+     Polymorphism
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../computer-organisation-and-architecture/intro.html">
+   computer Organisation And Architecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../operating-system/intro.html">
+   Operating System
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../design-patterns/intro.html">
+   Design Patterns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../system-design/intro.html">
+   System Design Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../database-design/intro.html">
+   Database Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../computer-networks/intro.html">
+   Computer Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cryptography/intro.html">
+   Cryptography
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../information-theory/intro.html">
+   Information Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../testing/intro.html">
+   Testing
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/algorithms/dynamic-programming.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/RatanShreshtha/GrokkingCS"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/RatanShreshtha/GrokkingCS/issues/new?title=Issue%20on%20page%20%2Falgorithms/dynamic-programming.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/RatanShreshtha/GrokkingCS/main?urlpath=tree/docs/algorithms/dynamic-programming.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overlapping-subproblems">
+   Overlapping Subproblems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optimal-substructure">
+   Optimal Substructure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tabulation-vs-memoization">
+   Tabulation vs Memoization
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tabulation-method-bottom-up-dynamic-programming">
+     Tabulation Method (Bottom Up Dynamic Programming)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#memoization-method-top-down-dynamic-programming">
+     Memoization Method (Top Down Dynamic Programming)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="dynamic-programming">
+<h1>Dynamic Programming<a class="headerlink" href="#dynamic-programming" title="Permalink to this headline">¶</a></h1>
+<p>Dynamic Programming is mainly an optimization over plain recursion. Wherever we see a recursive solution that has repeated calls for same inputs, we can optimize it using Dynamic Programming. The idea is to simply store the results of subproblems, so that we do not have to re-compute them when needed later. This simple optimization reduces time complexities from exponential to polynomial.</p>
+<p>Following are the two main properties of a problem that suggests that the given problem can be solved using Dynamic programming.</p>
+<ol class="simple">
+<li><p>Overlapping Subproblems</p></li>
+<li><p>Optimal Substructure</p></li>
+</ol>
+<div class="section" id="overlapping-subproblems">
+<h2>Overlapping Subproblems<a class="headerlink" href="#overlapping-subproblems" title="Permalink to this headline">¶</a></h2>
+<p>Like Divide and Conquer, <strong>Dynamic Programming</strong> combines solutions to sub-problems. Dynamic Programming is mainly used when <em>solutions of same subproblems are needed again and again</em>. In dynamic programming, <em>computed solutions to subproblems are stored in a table so that these don’t have to be recomputed</em>. So Dynamic Programming is not useful when there are no common (overlapping) subproblems because there is no point storing the solutions if they are not needed again.</p>
+<p><strong>Example</strong></p>
+<p>Recursive program for Fibonacci Numbers, there are many subproblems which are solved again and again.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                          <span class="n">fib</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+                     <span class="o">/</span>             \
+               <span class="n">fib</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>                <span class="n">fib</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+             <span class="o">/</span>      \                <span class="o">/</span>     \
+         <span class="n">fib</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>      <span class="n">fib</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>         <span class="n">fib</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>    <span class="n">fib</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="o">/</span>     \        <span class="o">/</span>    \       <span class="o">/</span>    \
+  <span class="n">fib</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>   <span class="n">fib</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="n">fib</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">fib</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="n">fib</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">fib</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+  <span class="o">/</span>    \
+<span class="n">fib</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">fib</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="optimal-substructure">
+<h2>Optimal Substructure<a class="headerlink" href="#optimal-substructure" title="Permalink to this headline">¶</a></h2>
+<p>A given problems has Optimal Substructure Property if optimal solution of the given problem can be obtained by using optimal solutions of its subproblems.</p>
+<p><strong>Example</strong></p>
+<p>The Shortest Path problem has following optimal substructure property:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>If a node x lies in the shortest path from a source node u to destination node v then 
+shortest path from u to v is combination of shortest path from u to x and shortest path from x to v. 
+</pre></div>
+</div>
+<p>The standard All Pair Shortest Path algorithms like Floyd–Warshall and Bellman–Ford are typical examples of <strong>Dynamic Programming</strong>.</p>
+</div>
+<div class="section" id="tabulation-vs-memoization">
+<h2>Tabulation vs Memoization<a class="headerlink" href="#tabulation-vs-memoization" title="Permalink to this headline">¶</a></h2>
+<p>There are following two different ways to store the values so that the values of a sub-problem can be reused. Here, will discuss two patterns of solving DP problem:</p>
+<ol class="simple">
+<li><p>Tabulation (Bottom Up)</p></li>
+<li><p>Memoization (Top Down)</p></li>
+</ol>
+<div class="section" id="tabulation-method-bottom-up-dynamic-programming">
+<h3>Tabulation Method (Bottom Up Dynamic Programming)<a class="headerlink" href="#tabulation-method-bottom-up-dynamic-programming" title="Permalink to this headline">¶</a></h3>
+<p>As the name itself suggests starting from the bottom and cumulating answers to the top. Let’s discuss in terms of state transition.</p>
+<p>Let’s describe a state for our DP problem to be <strong><code class="docutils literal notranslate"><span class="pre">dp[x]</span></code></strong> with <strong><code class="docutils literal notranslate"><span class="pre">dp[0]</span></code> as base state</strong> and <strong><code class="docutils literal notranslate"><span class="pre">dp[n]</span></code> as our destination state</strong>. So,  we need to find the value of destination state i.e <code class="docutils literal notranslate"><span class="pre">dp[n]</span></code>.</p>
+<p>If we start our transition from our base state i.e <code class="docutils literal notranslate"><span class="pre">dp[0]</span></code> and follow our state transition relation to reach our destination state <code class="docutils literal notranslate"><span class="pre">dp[n]</span></code>, we call it <strong>Bottom Up</strong> approach as it is quite clear that we started our transition from the <strong>bottom base state</strong> and reached the <strong>top most desired state</strong>.</p>
+</div>
+<div class="section" id="memoization-method-top-down-dynamic-programming">
+<h3>Memoization Method (Top Down Dynamic Programming)<a class="headerlink" href="#memoization-method-top-down-dynamic-programming" title="Permalink to this headline">¶</a></h3>
+<p>Let’s describe it in terms of state transition. If we need to find the value for some state say <code class="docutils literal notranslate"><span class="pre">dp[n]</span></code> and instead of starting from the base state that i.e <code class="docutils literal notranslate"><span class="pre">dp[0]</span></code> we ask our answer from the states that can reach the destination state <code class="docutils literal notranslate"><span class="pre">dp[n]</span></code> following the state transition relation, then it is the top-down fashion of DP.</p>
+<p>Here, we start our journey from the <strong>top most destination state</strong> and compute its answer by taking in count the values of states that can reach the <strong>destination state</strong>, till we reach the <strong>bottom most base state</strong>.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p></p></th>
+<th class="text-align:center head"><p>Tabulation (Bottom Up)</p></th>
+<th class="text-align:center head"><p>Memoization (Top Down )</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><strong>State</strong></p></td>
+<td class="text-align:center"><p>State transition relation is difficult to think</p></td>
+<td class="text-align:center"><p>State transition relation is easy to think</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><strong>Code</strong></p></td>
+<td class="text-align:center"><p>Code is complicated with a lot conditions</p></td>
+<td class="text-align:center"><p>Code is easy and less complicated</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><strong>Speed</strong></p></td>
+<td class="text-align:center"><p>Fast</p></td>
+<td class="text-align:center"><p>Slow</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><strong>Sub-Problem Solving</strong></p></td>
+<td class="text-align:center"><p>All sub-problems are solved</p></td>
+<td class="text-align:center"><p>Solves only required sub-problems</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><strong>Table Entries</strong></p></td>
+<td class="text-align:center"><p>All entries are filled.</p></td>
+<td class="text-align:center"><p>Entries are filled on demand</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fibonacci_table</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">fibonacci_tabulation</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">fib_num</span> <span class="o">=</span> <span class="n">fibonacci_table</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">fibonacci_table</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span>
+        <span class="n">fibonacci_table</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fib_num</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">fibonacci_table</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">fibonacci_lookups</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">def</span> <span class="nf">fibonacci_memoization</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">fibonacci_lookups</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fibonacci_lookups</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>  <span class="c1"># base case</span>
+        <span class="n">fibonacci_lookups</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span>
+        <span class="k">return</span> <span class="n">fibonacci_lookups</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+
+    <span class="n">fibonacci_lookups</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">fibonacci_memoization</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci_memoization</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fibonacci_lookups</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fibonacci_tabulation</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fibonacci_memoization</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139423224561697880139724382870407283950070256587697307264108962948325571622863290691557658876222521294125
+139423224561697880139724382870407283950070256587697307264108962948325571622863290691557658876222521294125
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./algorithms"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="recursion.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Recursion</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../object-oriented-programming/intro.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Object Oriented Programming</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Ratan Kulshreshtha<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
