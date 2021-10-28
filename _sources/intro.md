@@ -8,7 +8,7 @@ GrokkingCS is an open source project for learning and revising computer science 
 
 Computer science is the study of problems, problem-solving, and the solutions that come out of the problem-solving process. Given a problem, a computer scientist’s goal is to develop a step-by-step list of instructions for solving any instance of the problem that might arise.
 
-## Why should I learn computer science?
+## Why should I study computer science?
 
 Computer science is a dynamic and rapidly growing area that has become an integral part of the world that we live in today.
 

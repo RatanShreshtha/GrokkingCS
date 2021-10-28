@@ -1,8 +1,12 @@
 # Data Structures
 
-A data structure is a particular way of organizing data in a computer so that it can be used effectively. 
+A data structure is a particular way of organizing data in a computer so that it can be used effectively.
 
-## Abstract Data Types (ADT)
+## Why should I study data structure?
+
+Data structure are often quite different from one another, learning data structures gives you an idea how data in organized in a computer and how to change/modify it in order to access/modify it really efficiently and fast.
+
+## Abstract Data Types
 
 **Abstract Data Types (ADT)**, is a logical description of how we view the data and the operations that are allowed without regard to how they will be implemented. This means that we are concerned only with what the data is representing and not with how it will eventually be constructed. By providing this level of abstraction, we are creating an encapsulation around the data.
 
