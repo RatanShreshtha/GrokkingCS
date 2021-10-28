@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/RatanShreshtha/GrokkingCS">
-    <img src="grokkingcs/logo.png" alt="Logo" width="180" height="180">
+    <img src="src/logo.png" alt="Logo" width="180" height="180">
   </a>
 
   <h3 align="center">GrokkingCS</h3>
@@ -39,11 +39,11 @@ If you'd like to develop and/or build the GrokkingCS book, you should:
 
 1. Clone this repository
 2. Run `pip install -r requirements.txt` (it is recommended you do this within a virtual environment)
-3. (Optional) Edit the books source files located in the `grokkingcs/` directory
-4. Run `jupyter-book clean grokkingcs/` to remove any existing builds
-5. Run `jupyter-book build grokkingcs/`
+3. (Optional) Edit the books source files located in the `src/` directory
+4. Run `jupyter-book clean src/` to remove any existing builds
+5. Run `jupyter-book build src/`
 
-A fully-rendered HTML version of the book will be built in `grokkingcs/_build/html/`.
+A fully-rendered HTML version of the book will be built in `src/_build/html/`.
 
 ### Hosting the book
 
@@ -75,7 +75,7 @@ See the [open issues](https://github.com/RatanShreshtha/GrokkingCS/issues) for a
 
 ## Contributing
 
-We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/RatanShreshtha/grokkingcs/graphs/contributors).
+We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/RatanShreshtha/src/graphs/contributors).
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!
