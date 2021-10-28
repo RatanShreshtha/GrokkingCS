@@ -16,6 +16,11 @@ chapters:
   - file: data-structures/graph
 - file: algorithms/intro
 - file: object-oriented-programming/intro
+  sections:
+  - file: object-oriented-programming/encapsulation
+  - file: object-oriented-programming/abstraction
+  - file: object-oriented-programming/inheritance
+  - file: object-oriented-programming/polymorphism
 - file: computer-organisation-and-architecture/intro
 - file: operating-system/intro
 - file: design-patterns/intro
