@@ -15,6 +15,10 @@ chapters:
   - file: data-structures/hash-table
   - file: data-structures/graph
 - file: algorithms/intro
+  sections:
+  - file: algorithms/sorting-and-searching
+  - file: algorithms/recursion
+  - file: algorithms/dynamic-programming
 - file: object-oriented-programming/intro
   sections:
   - file: object-oriented-programming/encapsulation
