@@ -56,16 +56,16 @@ For GitHub and GitLab deployment specifically, the [cookiecutter-jupyter-book](h
 - [x] Introduction
 - [ ] Basic Programming
 - [ ] Mathematics
-- [ ] Data Structures
-- [ ] Algorithms
-- [ ] Object Oriented Programming
+- [x] Data Structures
+- [x] Algorithms
+- [x] Object Oriented Programming
 - [ ] Design Patterns
 - [ ] Computer Organization And Architecture
 - [ ] Operating System
 - [ ] Computer Networks
 - [ ] Cryptography
 - [ ] Database Design
-- [ ] System Design
+- [x] System Design
 - [ ] Testing
 - [ ] Information Theory
 
@@ -96,7 +96,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Ratan Kulshreshtha - [@RatanShreshtha](https://twitter.com/RatanShreshtha) - email@example.com
+Ratan Kulshreshtha - [@RatanShreshtha](https://twitter.com/RatanShreshtha)
 
 Project Link: [https://github.com/RatanShreshtha/GrokkingCS](https://github.com/RatanShreshtha/GrokkingCS)
 
