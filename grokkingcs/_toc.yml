@@ -4,6 +4,16 @@ chapters:
 - file: basic-programming/intro
 - file: mathematics/intro
 - file: data-structures/intro
+  sections:
+  - file: data-structures/stack
+  - file: data-structures/queue
+  - file: data-structures/deque
+  - file: data-structures/list
+  - file: data-structures/tree
+  - file: data-structures/heap
+  - file: data-structures/priority-queue
+  - file: data-structures/hash-table
+  - file: data-structures/graph
 - file: algorithms/intro
 - file: object-oriented-programming/intro
 - file: computer-organisation-and-architecture/intro
