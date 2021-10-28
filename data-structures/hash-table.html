@@ -1,0 +1,613 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hash Table &#8212; GrokkingCS</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Graph" href="graph.html" />
+    <link rel="prev" title="Priority Queue" href="priority-queue.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">GrokkingCS</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   GrokkingCS
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../basic-programming/intro.html">
+   Basic Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mathematics/intro.html">
+   Mathematics
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Data Structures
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="stack.html">
+     Stack
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="queue.html">
+     Queue
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="deque.html">
+     Deque
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="list.html">
+     Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tree.html">
+     Trees
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="heap.html">
+     Heap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="priority-queue.html">
+     Priority Queue
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Hash Table
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="graph.html">
+     Graph
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algorithms/intro.html">
+   Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../object-oriented-programming/intro.html">
+   Object Oriented Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../computer-organisation-and-architecture/intro.html">
+   computer Organisation And Architecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../operating-system/intro.html">
+   Operating System
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../design-patterns/intro.html">
+   Design Patterns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../system-design/intro.html">
+   System Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../database-design/intro.html">
+   Database Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../computer-networks/intro.html">
+   Computer Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cryptography/intro.html">
+   Cryptography
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../information-theory/intro.html">
+   Information Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../testing/intro.html">
+   Testing
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/data-structures/hash-table.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/RatanShreshtha/GrokkingCS"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/RatanShreshtha/GrokkingCS/issues/new?title=Issue%20on%20page%20%2Fdata-structures/hash-table.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hash-functions">
+   Hash Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#collision-resolution">
+   Collision Resolution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hash-table-abstract-data-type">
+   Hash Table Abstract Data Type
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hash-table-operations">
+     Hash Table Operations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementing-a-hash-table-in-python">
+   Implementing a Hash Table in Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bonus-material">
+   Bonus Material
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="hash-table">
+<h1>Hash Table<a class="headerlink" href="#hash-table" title="Permalink to this headline">¶</a></h1>
+<p>A hash table is a collection of items which are stored in such a way as to make it easy to find them later. In order to do this, we will need to know even more about where the items might be when we go to look for them in the collection. If every item is where it should be, then the search can use a single comparison to discover the presence of an item. Each position of the hash table, often called a slot, can hold an item and is named by an integer value starting at 0.</p>
+<p>The mapping between an item and the slot where that item belongs in the hash table is called the <strong>hash function</strong>. The hash function will take any item in the collection and return an integer in the range of slot names, between 0 and m-1.</p>
+<p>Ratio of number of items in a hash table to size of hash table is called <strong>load factor</strong>.</p>
+<div class="section" id="hash-functions">
+<h2>Hash Functions<a class="headerlink" href="#hash-functions" title="Permalink to this headline">¶</a></h2>
+<p>Given a collection of items, a hash function that maps each item into a unique slot is referred to as a perfect hash function. If we know the items and the collection will never change, then it is possible to construct a perfect hash function (refer to the exercises for more about perfect hash functions).</p>
+<p>Unfortunately, given an arbitrary collection of items, there is no systematic way to construct a perfect hash function. Luckily, we do not need the hash function to be perfect to still gain performance efficiency.</p>
+<p>One way to always have a perfect hash function is to increase the size of the hash table so that each possible value in the item range can be accommodated. This guarantees that each item will have a unique slot. Although this is practical for small numbers of items, it is not feasible when the number of possible items is large.</p>
+<p>A good hash function has following properties:</p>
+<ol class="simple">
+<li><p>It minimizes the number of collisions</p></li>
+<li><p>It is easy to compute.</p></li>
+<li><p>It evenly distributes the items in the hash table.</p></li>
+</ol>
+<p>The <strong>folding method</strong> for constructing hash functions begins by dividing the item into equal-size pieces (the last piece may not be of equal size). These pieces are then added together to give the resulting hash value.</p>
+<p><strong>Example</strong></p>
+<ol class="simple">
+<li><p>The phone number 436-555-4601, we would take the digits and divide them into groups of 2 (43,65,55,46,01). After the addition, 43+65+55+46+01, we get 210. If we assume our hash table has 11 slots, then we need to perform the extra step of dividing by 11 and keeping the remainder. In this case 210 % 11 is 1, so the phone number 436-555-4601 hashes to slot 1.</p></li>
+</ol>
+<p>Another numerical technique for constructing a hash function is called the <strong>mid-square method</strong>. We first square the item, and then extract some portion of the resulting digits.</p>
+<p><strong>Example</strong></p>
+<ol class="simple">
+<li><p>If the item were 44, we would first compute 44^2=1,936. By extracting the middle two digits, 93, and performing the remainder step, we get 5 (93 % 11) so the number 44 hashes to slot 5.</p></li>
+</ol>
+</div>
+<div class="section" id="collision-resolution">
+<h2>Collision Resolution<a class="headerlink" href="#collision-resolution" title="Permalink to this headline">¶</a></h2>
+<p>When two items hash to the same slot it is called <strong>collision</strong>, we must have a systematic method for placing the second item in the hash table. This process is called <strong>collision resolution</strong>. If the hash function is perfect, collisions will never occur. However, since this is often not possible, collision resolution becomes a very important part of hashing.</p>
+<p>The general name for this process of looking for another slot after a collision is rehashing. In general, <code class="docutils literal notranslate"><span class="pre">𝑟𝑒ℎ𝑎𝑠ℎ(𝑝𝑜𝑠)=(𝑝𝑜𝑠+𝑠𝑘𝑖𝑝)%𝑠𝑖𝑧𝑒𝑜𝑓𝑡𝑎𝑏𝑙𝑒</span></code>. It is important to note that the size of the “skip” must be such that all the slots in the table will eventually be visited. Otherwise, part of the table will be unused. To ensure this, it is often suggested that the table size be a prime number.</p>
+<ul class="simple">
+<li><p>One method for resolving collisions looks into the hash table and tries to find another open slot to hold the item that caused the collision. A simple way to do this is to start at the original hash value position and then move in a sequential manner through the slots until we encounter the first slot that is empty, we may need to go back to the first slot (circularly) to cover the entire hash table. This collision resolution process is referred to as <strong>open addressing</strong> in that it tries to find the next open slot or address in the hash table. By systematically visiting each slot one at a time, we are performing an open addressing technique called <strong>linear probing</strong>. A disadvantage to linear probing is the tendency for <strong>clustering</strong>; items become clustered in the table.</p></li>
+<li><p>A variation of the linear probing idea is called <strong>quadratic probing</strong>. Instead of using a constant “skip” value, we use a rehash function that increments the hash value by 1, 3, 5, 7, 9, and so on. This means that if the first hash value is h, the successive values are ℎ+1, ℎ+4, ℎ+9, ℎ+16, and so on. In general, the i will be i^2 <code class="docutils literal notranslate"><span class="pre">𝑟𝑒ℎ𝑎𝑠ℎ(𝑝𝑜𝑠)=(ℎ+𝑖^2)</span></code>. In other words, quadratic probing uses a skip consisting of successive perfect squares.</p></li>
+<li><p>An alternative method for handling the collision problem is to allow each slot to hold a reference to a collection (or chain) of items. <strong>Chaining</strong> allows many items to exist at the same location in the hash table. When collisions happen, the item is still placed in the proper slot of the hash table.</p></li>
+</ul>
+</div>
+<div class="section" id="hash-table-abstract-data-type">
+<h2>Hash Table Abstract Data Type<a class="headerlink" href="#hash-table-abstract-data-type" title="Permalink to this headline">¶</a></h2>
+<p>The hash table abstract data type is defined as follows. The structure is an unordered collection of associations between a key and a data value. The keys in a hash table are all unique so that there is a one-to-one relationship between a key and a value.</p>
+<div class="section" id="hash-table-operations">
+<h3>Hash Table Operations<a class="headerlink" href="#hash-table-operations" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">HashTable()</span></code> Create a new, empty hash table. It returns an empty hash table collection.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">put(key,val)</span></code> Add a new key-value pair to the hash table. If the key is already in the hash table then replace the old value with the new value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get(key)</span></code> Given a key, return the value stored in the hash table or None otherwise.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">delete(key)</span></code> Delete the key-value pair from the hash table.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">length()</span></code> Return the number of key-value pairs stored in the hash table.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">in</span></code> Return True for a statement of the form key in hash table, if the given key is in the hash table, False otherwise.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="implementing-a-hash-table-in-python">
+<h2>Implementing a Hash Table in Python<a class="headerlink" href="#implementing-a-hash-table-in-python" title="Permalink to this headline">¶</a></h2>
+<p>An abstract data type (ADT) when given a physical implementation then we refer to the implementation as a data structure.</p>
+<p>In any object-oriented programming language, the implementation of choice for an abstract data type such as a <strong>Hash Table</strong> is the creation of a new class. The Hash Table operations are implemented as methods. Further, to implement a Hash Table, which is a associative data type where you can store <code class="docutils literal notranslate"><span class="pre">key–data</span> <span class="pre">pairs</span></code>. The key is used to look up the associated data value.</p>
+<p>In Python, the Dictionary data types represent the implementation of hash tables. The Keys in the dictionary satisfy the following requirements. The keys of the dictionary are hashable i.e. the are generated by hashing function which generates unique result for each unique value supplied to the hash function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">HashTable</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">11</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_items</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+    
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">hash</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">value</span> <span class="o">%</span> <span class="n">size</span>
+    
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">rehash</span><span class="p">(</span><span class="n">old_hash</span><span class="p">,</span> <span class="n">skip</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">old_hash</span> <span class="o">+</span> <span class="n">skip</span><span class="p">)</span> <span class="o">%</span> <span class="n">size</span>
+    
+    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_items</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+        <span class="n">hash_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">hash_value</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">hash_value</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+           <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">hash_value</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span>
+           <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">hash_value</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+           <span class="k">return</span>
+        
+        <span class="n">rehash_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rehash</span><span class="p">(</span><span class="n">hash_value</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">rehash_value</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">rehash_value</span><span class="p">]</span> <span class="o">!=</span> <span class="n">key</span><span class="p">:</span>
+            <span class="n">rehash_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rehash</span><span class="p">(</span><span class="n">rehash_value</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">rehash_value</span><span class="p">]</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">rehash_value</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+           <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">rehash_value</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span>
+           <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">rehash_value</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+           <span class="k">return</span>
+    
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="n">hash_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">hash_value</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+           <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">hash_value</span><span class="p">]</span>
+        
+        <span class="n">rehash_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rehash</span><span class="p">(</span><span class="n">hash_value</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">rehash_value</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">rehash_value</span><span class="p">]</span> <span class="o">!=</span> <span class="n">key</span><span class="p">:</span>
+            <span class="n">rehash_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rehash</span><span class="p">(</span><span class="n">rehash_value</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">rehash_value</span><span class="p">]</span>
+    
+    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_items</span> <span class="o">-=</span> <span class="mi">1</span>
+        
+        <span class="n">hash_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">hash_value</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">hash_value</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+           <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">hash_value</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+           <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">hash_value</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+           <span class="k">return</span>
+        
+        <span class="n">rehash_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rehash</span><span class="p">(</span><span class="n">hash_value</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">rehash_value</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">rehash_value</span><span class="p">]</span> <span class="o">!=</span> <span class="n">key</span><span class="p">:</span>
+            <span class="n">rehash_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rehash</span><span class="p">(</span><span class="n">rehash_value</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">rehash_value</span><span class="p">]</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">rehash_value</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+           <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">[</span><span class="n">rehash_value</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+           <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">rehash_value</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+           <span class="k">return</span>
+    
+    <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_items</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an emplty hash table</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">HashTable</span><span class="p">()</span>
+
+<span class="c1"># Put few items with keys and values</span>
+<span class="n">h</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">54</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">)</span>
+<span class="n">h</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">)</span>
+<span class="n">h</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">93</span><span class="p">,</span> <span class="s2">&quot;lion&quot;</span><span class="p">)</span>
+<span class="n">h</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="s2">&quot;tiger&quot;</span><span class="p">)</span>
+<span class="n">h</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">77</span><span class="p">,</span> <span class="s2">&quot;bird&quot;</span><span class="p">)</span>
+<span class="n">h</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">44</span><span class="p">,</span> <span class="s2">&quot;goat&quot;</span><span class="p">)</span>
+
+<span class="c1"># Give the value with key 26</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">26</span><span class="p">))</span>
+
+<span class="c1"># Give the value with key 44</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">44</span><span class="p">))</span>
+
+<span class="c1"># Give length of the hash table</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">length</span><span class="p">())</span>
+
+<span class="c1"># Put few more items with keys and values</span>
+<span class="n">h</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">31</span><span class="p">,</span> <span class="s2">&quot;cow&quot;</span><span class="p">)</span>
+<span class="n">h</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="s2">&quot;pig&quot;</span><span class="p">)</span>
+<span class="n">h</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;chicken&quot;</span><span class="p">)</span>
+
+<span class="c1"># Delete value with key 44 </span>
+<span class="n">h</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">44</span><span class="p">)</span>
+
+<span class="c1"># Give length of the hash table</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">length</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dog
+goat
+6
+8
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bonus-material">
+<h2>Bonus Material<a class="headerlink" href="#bonus-material" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p><strong>Modern Python Dictionaries - A confluence of a dozen great ideas</strong></p>
+<ul class="simple">
+<li><p>By Raymond Hettinger</p></li>
+</ul>
+<p><a class="reference external" href="http://www.youtube.com/watch?v=npw4s1QTmPg"><img alt="Modern Python Dictionaries" src="http://img.youtube.com/vi/npw4s1QTmPg/0.jpg" /></a></p>
+</li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./data-structures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="priority-queue.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Priority Queue</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="graph.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Graph</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Ratan Kulshreshtha<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

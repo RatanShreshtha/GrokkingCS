@@ -1,0 +1,644 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deque &#8212; GrokkingCS</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lists" href="list.html" />
+    <link rel="prev" title="Queue" href="queue.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">GrokkingCS</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   GrokkingCS
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../basic-programming/intro.html">
+   Basic Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mathematics/intro.html">
+   Mathematics
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Data Structures
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="stack.html">
+     Stack
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="queue.html">
+     Queue
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Deque
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="list.html">
+     Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tree.html">
+     Trees
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="heap.html">
+     Heap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="priority-queue.html">
+     Priority Queue
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hash-table.html">
+     Hash Table
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="graph.html">
+     Graph
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algorithms/intro.html">
+   Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../object-oriented-programming/intro.html">
+   Object Oriented Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../computer-organisation-and-architecture/intro.html">
+   computer Organisation And Architecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../operating-system/intro.html">
+   Operating System
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../design-patterns/intro.html">
+   Design Patterns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../system-design/intro.html">
+   System Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../database-design/intro.html">
+   Database Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../computer-networks/intro.html">
+   Computer Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cryptography/intro.html">
+   Cryptography
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../information-theory/intro.html">
+   Information Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../testing/intro.html">
+   Testing
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/data-structures/deque.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/RatanShreshtha/GrokkingCS"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/RatanShreshtha/GrokkingCS/issues/new?title=Issue%20on%20page%20%2Fdata-structures/deque.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/RatanShreshtha/GrokkingCS/main?urlpath=tree/docs/data-structures/deque.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deque-abstract-data-type">
+   Deque Abstract Data Type
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deque-operations">
+     Deque Operations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementing-a-deque-in-python">
+   Implementing a Deque in Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practice-problem">
+   Practice Problem
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#write-a-function-check-pallindrome-string-that-return-true-if-the-input-string-is-palindrome-otherwise-return-false">
+     Write a function
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       check_pallindrome(string)
+      </span>
+     </code>
+     that return true if the input string is palindrome otherwise return false.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="deque">
+<h1>Deque<a class="headerlink" href="#deque" title="Permalink to this headline">¶</a></h1>
+<p>A deque, also known as a double-ended queue, is an ordered collection of items similar to the <strong>queue</strong>. It has two ends, a <strong>front</strong> and a <strong>rear</strong>, and the items remain positioned in the collection. What makes a deque different is the <strong>unrestrictive nature of adding and removing items</strong>. New items can be added at either the front or the rear. Likewise, existing items can be removed from either end. In a sense, this hybrid linear structure provides all the capabilities of stacks and queues in a single data structure.</p>
+<p>It is important to note that even though the deque can assume many of the characteristics of stacks and queues, it does not require the <strong>LIFO</strong> and <strong>FIFO</strong> orderings that are enforced by those data structures.</p>
+<p><img alt="Deque" src="https://runestone.academy/runestone/books/published/pythonds/_images/basicdeque.png" /></p>
+<p><strong>Examples</strong></p>
+<ul class="simple">
+<li><p>Cine for getting a movie ticket.</p></li>
+<li><p>Check-out line at a grocery store, and we wait in the cafeteria line (so that we can pop the tray stack).</p></li>
+<li><p>Operating systems use a number of different queues to control processes within a computer. The scheduling of what gets done next is typically based on a queuing algorithm that tries to execute programs as quickly as possible and serve as many users as it can.</p></li>
+</ul>
+<div class="section" id="deque-abstract-data-type">
+<h2>Deque Abstract Data Type<a class="headerlink" href="#deque-abstract-data-type" title="Permalink to this headline">¶</a></h2>
+<p>The deque abstract data type is defined by the following structure and operations. A deque is structured, as described above, as an ordered collection of items where items are added and removed from either end, either <strong>front</strong> or <strong>rear</strong>.</p>
+<div class="section" id="deque-operations">
+<h3>Deque Operations<a class="headerlink" href="#deque-operations" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Deque()</span></code> creates a new deque that is empty. It needs no parameters and returns an empty deque.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add_front(item)</span></code> adds a new item to the front of the deque. It needs the item and returns nothing.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add_rear(item)</span></code> adds a new item to the rear of the deque. It needs the item and returns nothing.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">remove_front()</span></code> removes the front item from the deque. It needs no parameters and returns the item. The deque is modified.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">remove_rear()</span></code> removes the rear item from the deque. It needs no parameters and returns the item. The deque is modified.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_empty()</span></code> tests to see whether the deque is empty. It needs no parameters and returns a boolean value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size()</span></code> returns the number of items in the deque. It needs no parameters and returns an integer.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">Deque()</span></code> creates a deque that starts out empty, table below shows the results of a sequence of deque operations.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Deque Operation</p></th>
+<th class="text-align:center head"><p>Deque Contents</p></th>
+<th class="text-align:center head"><p>Return Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">d.is_empty()</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">[]</span></code></p></td>
+<td class="text-align:center"><p>True</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">d.add_rear(4)</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">[4]</span></code></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">d.add_rear('dog')</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">['dog',4,]</span></code></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">d.add_front('cat')</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">['dog',4,'cat']</span></code></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">d.add_front(True)</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">['dog',4,'cat',True]</span></code></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">d.size()</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">['dog',4,'cat',True]</span></code></p></td>
+<td class="text-align:center"><p>4</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">d.is_empty()</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">['dog',4,'cat',True]</span></code></p></td>
+<td class="text-align:center"><p>False</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">d.add_rear(8.4)</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">[8.4,'dog',4,'cat',True]</span></code></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">d.remove_rear()</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">['dog',4,'cat',True]</span></code></p></td>
+<td class="text-align:center"><p>8.4</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">d.remove_front()</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">['dog',4,'cat']</span></code></p></td>
+<td class="text-align:center"><p>True</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="implementing-a-deque-in-python">
+<h2>Implementing a Deque in Python<a class="headerlink" href="#implementing-a-deque-in-python" title="Permalink to this headline">¶</a></h2>
+<p>An abstract data type (ADT) when given a physical implementation then we refer to the implementation as a data structure.</p>
+<p>In any object-oriented programming language, the implementation of choice for an abstract data type such as a <strong>Deque</strong> is the creation of a new class. The deque operations are implemented as methods. Further, to implement a queue, which is a collection of elements, it makes sense to utilize the primitive collections provided.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Deque</span><span class="p">:</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span> <span class="o">==</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">add_front</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">add_rear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">remove_front</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">remove_rear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">size</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new deque</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">Deque</span><span class="p">()</span>
+
+<span class="c1"># Check if the deque is empty</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">is_empty</span><span class="p">())</span>
+
+<span class="c1"># Add 4 at rear</span>
+<span class="n">d</span><span class="o">.</span><span class="n">add_rear</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Add &quot;dog&quot; at rear</span>
+<span class="n">d</span><span class="o">.</span><span class="n">add_rear</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add &quot;cat&quot; at front</span>
+<span class="n">d</span><span class="o">.</span><span class="n">add_front</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add True at front</span>
+<span class="n">d</span><span class="o">.</span><span class="n">add_front</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Give the size of the deque</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
+
+<span class="c1"># Check if the deque is empty</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">is_empty</span><span class="p">())</span>
+
+<span class="c1"># Add 8.4 at rear</span>
+<span class="n">d</span><span class="o">.</span><span class="n">add_rear</span><span class="p">(</span><span class="mf">8.4</span><span class="p">)</span>
+
+<span class="c1"># Remove item from rear</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">remove_rear</span><span class="p">())</span>
+
+<span class="c1"># Remove item from front</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">remove_front</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+4
+False
+8.4
+True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="practice-problem">
+<h2>Practice Problem<a class="headerlink" href="#practice-problem" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="write-a-function-check-pallindrome-string-that-return-true-if-the-input-string-is-palindrome-otherwise-return-false">
+<h3>Write a function <code class="docutils literal notranslate"><span class="pre">check_pallindrome(string)</span></code> that return true if the input string is palindrome otherwise return false.<a class="headerlink" href="#write-a-function-check-pallindrome-string-that-return-true-if-the-input-string-is-palindrome-otherwise-return-false" title="Permalink to this headline">¶</a></h3>
+<p>A palindrome is a string that reads the same forward and backward.</p>
+<p><strong>Example</strong>: radar, toot, madam etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_pallindrome</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="n">characters</span> <span class="o">=</span> <span class="n">Deque</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">string</span><span class="p">:</span>
+        <span class="n">characters</span><span class="o">.</span><span class="n">add_rear</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="n">characters</span><span class="o">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">rear</span> <span class="o">=</span> <span class="n">characters</span><span class="o">.</span><span class="n">remove_rear</span><span class="p">()</span>
+        <span class="n">front</span> <span class="o">=</span> <span class="n">characters</span><span class="o">.</span><span class="n">remove_front</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">rear</span> <span class="o">!=</span> <span class="n">front</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    
+    <span class="k">return</span> <span class="kc">True</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">check_pallindrome</span><span class="p">(</span><span class="s2">&quot;radar&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">check_pallindrome</span><span class="p">(</span><span class="s2">&quot;toot&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">check_pallindrome</span><span class="p">(</span><span class="s2">&quot;lsdkjfskf&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">check_pallindrome</span><span class="p">(</span><span class="s2">&quot;abb&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">check_pallindrome</span><span class="p">(</span><span class="s2">&quot;abba&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+False
+False
+True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./data-structures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="queue.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Queue</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="list.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lists</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Ratan Kulshreshtha<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

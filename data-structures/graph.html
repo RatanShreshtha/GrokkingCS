@@ -1,0 +1,866 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graph &#8212; GrokkingCS</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Algorithms" href="../algorithms/intro.html" />
+    <link rel="prev" title="Hash Table" href="hash-table.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">GrokkingCS</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   GrokkingCS
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../basic-programming/intro.html">
+   Basic Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mathematics/intro.html">
+   Mathematics
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Data Structures
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="stack.html">
+     Stack
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="queue.html">
+     Queue
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="deque.html">
+     Deque
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="list.html">
+     Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tree.html">
+     Trees
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="heap.html">
+     Heap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="priority-queue.html">
+     Priority Queue
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hash-table.html">
+     Hash Table
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Graph
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algorithms/intro.html">
+   Algorithms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../object-oriented-programming/intro.html">
+   Object Oriented Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../computer-organisation-and-architecture/intro.html">
+   computer Organisation And Architecture
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../operating-system/intro.html">
+   Operating System
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../design-patterns/intro.html">
+   Design Patterns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../system-design/intro.html">
+   System Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../database-design/intro.html">
+   Database Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../computer-networks/intro.html">
+   Computer Networks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../cryptography/intro.html">
+   Cryptography
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../information-theory/intro.html">
+   Information Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../testing/intro.html">
+   Testing
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/data-structures/graph.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/RatanShreshtha/GrokkingCS"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/RatanShreshtha/GrokkingCS/issues/new?title=Issue%20on%20page%20%2Fdata-structures/graph.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/RatanShreshtha/GrokkingCS/main?urlpath=tree/docs/data-structures/graph.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vocabulary-and-definitions">
+   Vocabulary and Definitions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-of-graphs">
+   Types of Graphs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#undirected-graph">
+     Undirected Graph
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#directed-graph-digraph">
+     Directed Graph (Digraph)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#weighted-graphs">
+     Weighted Graphs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#special-graphs">
+   Special Graphs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tree">
+     Tree
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#directed-acyclic-graphs-dags">
+     Directed Acyclic Graphs (DAGs)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bipartite-graph">
+     Bipartite Graph
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#complete-graphs">
+     Complete Graphs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representing-graphs">
+   Representing Graphs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adjacency-matrix">
+     Adjacency Matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adjacency-list">
+     Adjacency List
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#edge-list">
+     Edge List
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graph-abstract-data-type">
+   Graph Abstract Data Type
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementing-a-graph-in-python">
+   Implementing a Graph in Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#breadth-first-search">
+   Breadth First Search
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#breadth-first-search-analysis">
+     Breadth First Search Analysis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applications-of-breadth-first-search">
+     Applications of Breadth First Search
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#depth-first-search">
+   Depth First Search
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#depth-first-search-analysis">
+     Depth First Search Analysis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applications-of-depth-first-search">
+     Applications of Depth First Search
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#topological-sorting">
+   Topological Sorting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#strongly-connected-components">
+   Strongly Connected Components
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shortest-path-problems">
+   Shortest Path Problems
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dijkstras-algorithm">
+     Dijkstra’s Algorithm
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-a-star-algorithm">
+     A* (A Star) Algorithm
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#minimum-spanning-tree-mst">
+   Minimum Spanning Tree (MST)
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="graph">
+<h1>Graph<a class="headerlink" href="#graph" title="Permalink to this headline">¶</a></h1>
+<p>Graphs can be used to represent many interesting things about our world, including systems of roads, airline flights from city to city, how the Internet is connected, or even the sequence of classes you must take to complete a major in computer science.</p>
+<div class="section" id="vocabulary-and-definitions">
+<h2>Vocabulary and Definitions<a class="headerlink" href="#vocabulary-and-definitions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Vertex</strong>: A vertex (also called a “node”) is a fundamental part of a graph. It can have a name, which we will call the <strong>“key”</strong>. A vertex may also have additional information. We will call this additional information the “payload.”</p></li>
+<li><p><strong>Edge</strong>: An edge (also called an “arc”) is another fundamental part of a graph. An edge connects two vertices to show that there is a relationship between them. Edges may be one-way or two-way. If the edges in a graph are all one-way, we say that the graph is a <strong>directed graph</strong>, or a digraph.</p></li>
+<li><p><strong>Weight</strong>: Edges may be weighted to show that there is a cost to go from one vertex to another. For example in a graph of roads that connect one city to another, the weight on the edge might represent the distance between the two cities.</p></li>
+<li><p><strong>Path</strong>: A path in a graph is a sequence of vertices that are connected by edges. Formally we would define a path as <code class="docutils literal notranslate"><span class="pre">w1,w2,...,wn</span></code> such that <code class="docutils literal notranslate"><span class="pre">(wi,wi+1)</span> <span class="pre">∈</span> <span class="pre">E</span></code> for all <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">≤</span> <span class="pre">i</span> <span class="pre">≤</span> <span class="pre">n−1</span></code>. The unweighted path length is the number of edges in the path, specifically n−1. The weighted path length is the sum of the weights of all the edges in the path.</p></li>
+<li><p><strong>Cycle</strong>: A cycle in a directed graph is a path that starts and ends at the same vertex. A graph with no cycles is called an <strong>acyclic graph</strong>. A directed graph with no cycles is called a <strong>directed acyclic graph(DAG)</strong>.</p></li>
+</ul>
+<p>A graph can be represented by <code class="docutils literal notranslate"><span class="pre">G</span></code> where <code class="docutils literal notranslate"><span class="pre">G=(V,E)</span></code>. For the graph <code class="docutils literal notranslate"><span class="pre">G</span></code>, <code class="docutils literal notranslate"><span class="pre">V</span></code> is a set of vertices and <code class="docutils literal notranslate"><span class="pre">E</span></code> is a set of edges. Each edge is a tuple <code class="docutils literal notranslate"><span class="pre">(v,w)</span></code> where <code class="docutils literal notranslate"><span class="pre">w,v</span> <span class="pre">∈</span> <span class="pre">V</span></code>. We can add a third component to the edge tuple to represent a weight. A subgraph s is a set of edges e and vertices v such that <code class="docutils literal notranslate"><span class="pre">e</span> <span class="pre">⊂</span> <span class="pre">E</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">⊂</span> <span class="pre">V</span></code>.</p>
+</div>
+<div class="section" id="types-of-graphs">
+<h2>Types of Graphs<a class="headerlink" href="#types-of-graphs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="undirected-graph">
+<h3>Undirected Graph<a class="headerlink" href="#undirected-graph" title="Permalink to this headline">¶</a></h3>
+<p>An undirected graph is a graph in which edges have no orientation. The edge (u, v) is identical to the edge (v, u).</p>
+<!-- ![Undirected Graph](images/graph/undirected_graph.png) -->
+</div>
+<div class="section" id="directed-graph-digraph">
+<h3>Directed Graph (Digraph)<a class="headerlink" href="#directed-graph-digraph" title="Permalink to this headline">¶</a></h3>
+<p>A directed graph or digraph is a graph in which edges have orientations. For example, the edge (u, v) is the edge from node u to node v.</p>
+<!-- ![Directed Graph](images/graph/directed_graph.png) -->
+</div>
+<div class="section" id="weighted-graphs">
+<h3>Weighted Graphs<a class="headerlink" href="#weighted-graphs" title="Permalink to this headline">¶</a></h3>
+<p>Many graphs can have edges that contain a certain weight to represent an arbitrary value such as cost, distance, quantity, etc.</p>
+<!-- ![Weighted Graphs](images/graph/weighted_graph.png) -->
+</div>
+</div>
+<div class="section" id="special-graphs">
+<h2>Special Graphs<a class="headerlink" href="#special-graphs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tree">
+<h3>Tree<a class="headerlink" href="#tree" title="Permalink to this headline">¶</a></h3>
+<p>A tree is an undirected graph with no cycles. Equivalently, it is a connected graph with N nodes and N-1 edges.</p>
+<!-- ![Tree](images/graph/tree.png) -->
+</div>
+<div class="section" id="directed-acyclic-graphs-dags">
+<h3>Directed Acyclic Graphs (DAGs)<a class="headerlink" href="#directed-acyclic-graphs-dags" title="Permalink to this headline">¶</a></h3>
+<p>DAGs are directed graphs with no cycles. These graphs play an important role in representing structures with dependencies. Several efficient algorithms exist to operates on DAGs.</p>
+<p><em>Cool fact: All out-trees are DAGs but not all DAGs are out-trees.</em></p>
+<!-- ![Directed Acyclic Graphs](images/graph/directed_acyclic_graph.png) -->
+</div>
+<div class="section" id="bipartite-graph">
+<h3>Bipartite Graph<a class="headerlink" href="#bipartite-graph" title="Permalink to this headline">¶</a></h3>
+<p>A bipartite graph is one whose vertices can be split into two independent groups U, V such that every edge connects betweens U and V.</p>
+<p>Other definitions exist such as: The graph is two colourable or there is no odd length cycle.</p>
+<!-- ![Bipartite Graphs](images/graph/bipartite.png) -->
+</div>
+<div class="section" id="complete-graphs">
+<h3>Complete Graphs<a class="headerlink" href="#complete-graphs" title="Permalink to this headline">¶</a></h3>
+<p>A complete graph is one where there is a unique edge between every pair of nodes. A complete graph with n vertices is denoted as the graph Kn.</p>
+<!-- ![Complete Graphs](images/graph/complete_graph.png) --></div>
+</div>
+<div class="section" id="representing-graphs">
+<h2>Representing Graphs<a class="headerlink" href="#representing-graphs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adjacency-matrix">
+<h3>Adjacency Matrix<a class="headerlink" href="#adjacency-matrix" title="Permalink to this headline">¶</a></h3>
+<p>A adjacency matrix m is a very simple way to represent a graph. The idea is that the cell m[i][j] represents the edge weight of going from node i to node j.</p>
+<!-- ![Adjacency Matrix](images/graph/adjacency_matrix.png) -->
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Pros</p></th>
+<th class="text-align:left head"><p>Cons</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Space efficient for representing dense graphs</p></td>
+<td class="text-align:left"><p>Requires Θ(V²) space</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Edge weight lookup is O(1)</p></td>
+<td class="text-align:left"><p>Iterating over all edges takes Θ(V²) time</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Simplest graph representation</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="adjacency-list">
+<h3>Adjacency List<a class="headerlink" href="#adjacency-list" title="Permalink to this headline">¶</a></h3>
+<p>An adjacency list is a way to represent a graph as a map from nodes to lists of edges.</p>
+<!-- ![Adjacency List](images/graph/adjacency_list.png) -->
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Pros</p></th>
+<th class="text-align:left head"><p>Cons</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Space efficient for representing sparse graphs</p></td>
+<td class="text-align:left"><p>Less space efficient for denser graphs.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Iterating over all edges is efficient</p></td>
+<td class="text-align:left"><p>Edge weight lookup is O(E)</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p>Slightly more complex graph representation</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="edge-list">
+<h3>Edge List<a class="headerlink" href="#edge-list" title="Permalink to this headline">¶</a></h3>
+<p>An edge list is a way to represent a graph simply as an unordered list of edges. Assume the notation for any triplet (u,v,w) means: “the cost from node u to node v is w”
+This representation is seldomly used because of its lack of structure. However, it is conceptually simple and practical in a handful of algorithms.</p>
+<!-- ![Edge List](images/graph/edge_list.png) -->
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Pros</p></th>
+<th class="text-align:left head"><p>Cons</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Space efficient for representing sparse graphs</p></td>
+<td class="text-align:left"><p>Less space efficient for denser graphs.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Iterating over all edges is efficient</p></td>
+<td class="text-align:left"><p>Edge weight lookup is O(E)</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Very simple structure</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="graph-abstract-data-type">
+<h2>Graph Abstract Data Type<a class="headerlink" href="#graph-abstract-data-type" title="Permalink to this headline">¶</a></h2>
+<p>The graph abstract data type (ADT) is defined as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Graph()</span></code> creates a new, empty graph.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add_vertex(vert)</span></code> adds an instance of Vertex to the graph.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add_edge(fromVert,</span> <span class="pre">toVert)</span></code> Adds a new, directed edge to the graph that connects two vertices.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add_edge(fromVert,</span> <span class="pre">toVert,</span> <span class="pre">weight)</span></code> Adds a new, weighted, directed edge to the graph that connects two vertices.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_vertices()</span></code> returns the list of all vertices in the graph.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">in</span></code> returns True for a statement of the form vertex in graph, if the given vertex is in the graph, False otherwise.</p></li>
+</ul>
+</div>
+<div class="section" id="implementing-a-graph-in-python">
+<h2>Implementing a Graph in Python<a class="headerlink" href="#implementing-a-graph-in-python" title="Permalink to this headline">¶</a></h2>
+<p>An abstract data type (ADT) when given a physical implementation then we refer to the implementation as a data structure.</p>
+<p>In any object-oriented programming language, the implementation of choice for an abstract data type such as a <strong>Graph</strong> is the creation of a new class. The Graph operations are implemented as methods.</p>
+<p>Using dictionaries, it is easy to implement the adjacency list in Python. In our implementation of the Graph abstract data type we will create a classes <code class="docutils literal notranslate"><span class="pre">Graph</span></code>, which holds the master list of <em>vertices</em>, and <strong>edges</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Graph</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vertices</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_vertices</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">edges</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_edges</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">def</span> <span class="nf">add_vertex</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">vertices</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vertices</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">num_vertices</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+
+    <span class="k">def</span> <span class="nf">add_edge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_vertex</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_vertex</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">edges</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">edges</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">u</span><span class="p">:</span> <span class="n">w</span><span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">edges</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="n">w</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_edges</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="k">def</span> <span class="nf">get_vertices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vertices</span>
+
+    <span class="k">def</span> <span class="nf">get_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">edges</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">get_vertices</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">get_edges</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; └──&gt; </span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">w</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+ └──&gt; 1: 5
+ └──&gt; 4: 4
+1
+ └──&gt; 0: 6
+ └──&gt; 4: 7
+ └──&gt; 3: 8
+ └──&gt; 2: 1
+2
+ └──&gt; 3: 3
+3
+ └──&gt; 4: 2
+4
+ └──&gt; 1: 0
+ └──&gt; 3: 1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="breadth-first-search">
+<h2>Breadth First Search<a class="headerlink" href="#breadth-first-search" title="Permalink to this headline">¶</a></h2>
+<p>Breadth first search (BFS. is one of the easiest algorithms for searching a graph. It also serves as a prototype for several other important graph algorithms.</p>
+<p>Given a graph <code class="docutils literal notranslate"><span class="pre">G</span></code> and a starting vertex <code class="docutils literal notranslate"><span class="pre">s</span></code>, a breadth first search proceeds by exploring edges in the graph to find all the vertices in <code class="docutils literal notranslate"><span class="pre">G</span></code> for which there is a path from <code class="docutils literal notranslate"><span class="pre">s</span></code>. The remarkable thing about a breadth first search is that it finds all the vertices that are a distance <code class="docutils literal notranslate"><span class="pre">k</span></code> from s before it finds any vertices that are a distance <code class="docutils literal notranslate"><span class="pre">k+1</span></code>.</p>
+<div class="section" id="breadth-first-search-analysis">
+<h3>Breadth First Search Analysis<a class="headerlink" href="#breadth-first-search-analysis" title="Permalink to this headline">¶</a></h3>
+<p><strong>Breadth First Search loops</strong> one time for each vertex in the graph <code class="docutils literal notranslate"><span class="pre">|V|</span></code>, this gives us <code class="docutils literal notranslate"><span class="pre">O(V)</span></code> for the outer loop. The inner loop, which is nested is executed at <em>most once for each edge in the graph</em>, <code class="docutils literal notranslate"><span class="pre">|E|</span></code>. The reason is that <em>every vertex is dequeued at most once</em> and we examine an edge from node u to node v only when node u is dequeued. This gives us O(E. for the for loop, combining the two loops gives us O(V+E).</p>
+</div>
+<div class="section" id="applications-of-breadth-first-search">
+<h3>Applications of Breadth First Search<a class="headerlink" href="#applications-of-breadth-first-search" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Shortest Path and Minimum Spanning Tree for unweighted graph In an unweighted graph, the shortest path is the path with least number of edges. With Breadth First, we always reach a vertex from given source using the minimum number of edges. Also, in case of unweighted graphs, any spanning tree is Minimum Spanning Tree.</p></li>
+<li><p>Peer to Peer Networks. In Peer to Peer Networks like BitTorrent, Breadth First Search is used to find all neighbor nodes.</p></li>
+<li><p>Crawlers in Search Engines.</p></li>
+<li><p>Social Networking Websites: In social networks, we can find people within a given distance ‘k’ from a person using Breadth First Search till ‘k’ levels.</p></li>
+<li><p>GPS Navigation systems: Breadth First Search is used to find all neighboring locations.</p></li>
+<li><p>Broadcasting in Network: In networks, a broadcasted packet follows Breadth First Search to reach all nodes.</p></li>
+<li><p>In Garbage Collection: Breadth First Search is used in copying garbage collection using Cheney’s algorithm. Refer this and for details. Breadth First Search is preferred over Depth First Search because of better locality of reference.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="depth-first-search">
+<h2>Depth First Search<a class="headerlink" href="#depth-first-search" title="Permalink to this headline">¶</a></h2>
+<p>Given a graph <code class="docutils literal notranslate"><span class="pre">G</span></code> and a starting vertex <code class="docutils literal notranslate"><span class="pre">s</span></code>, a depth first search proceeds by exploring edges in the graph to create the deepest depth first tree, without any branches all the vertices in <code class="docutils literal notranslate"><span class="pre">G</span></code> for which there is a path from <code class="docutils literal notranslate"><span class="pre">s</span></code>. It is even possible that a depth first search will create more than one tree. When the depth first search algorithm creates a group of trees we call this a depth first forest.</p>
+<div class="section" id="depth-first-search-analysis">
+<h3>Depth First Search Analysis<a class="headerlink" href="#depth-first-search-analysis" title="Permalink to this headline">¶</a></h3>
+<p><strong>Depth First Search loops</strong> one time for each vertex in the graph <code class="docutils literal notranslate"><span class="pre">|V|</span></code>, this gives us <code class="docutils literal notranslate"><span class="pre">O(V)</span></code> for the outer loop. The inner loop, which is nested is executed at <em>most once for each edge in the graph</em>, <code class="docutils literal notranslate"><span class="pre">|E|</span></code>. The reason is that <em>every vertex is pushed at most once</em> and we examine an edge from node u to node v only when node u is poped. This gives us O(E) for the for loop, combining the two loops gives us O(V+E).</p>
+</div>
+<div class="section" id="applications-of-depth-first-search">
+<h3>Applications of Depth First Search<a class="headerlink" href="#applications-of-depth-first-search" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>For a weighted graph, DFS traversal of the graph produces the minimum spanning tree and all pair shortest path tree.</p></li>
+<li><p>Detecting Cycle: A graph has cycle if and only if we see a back edge during DFS. So we can run DFS for the graph and check for back edges. (See this for details)</p></li>
+<li><p>Path Finding: DFS algorithm can be modified to find a path between two given vertices u and z.</p>
+<ol class="simple">
+<li><p>Call DFS(G, u) with u as the start vertex.</p></li>
+<li><p>Use a stack S to keep track of the path between the start vertex and the current vertex.</p></li>
+<li><p>As soon as destination vertex z is encountered, return the path as the contents of the stack</p></li>
+</ol>
+</li>
+<li><p>Topological Sorting: used for scheduling jobs from the given dependencies among jobs.</p></li>
+<li><p>Test if a graph is bipartite
+We can augment either BFS or DFS when we first discover a new vertex, color it opposited its parents, and for each other edge, check it doesn’t link two vertices of the same color. The first vertex in any connected component can be red or black! See this for details.</p></li>
+<li><p>Finding Strongly Connected Components of a graph A directed graph is called strongly connected if there is a path from each vertex in the graph to every other vertex. (See this for DFS based algo for finding Strongly Connected Components)</p></li>
+<li><p>Solving puzzles with only one solution, such as mazes. (DFS can be adapted to find all solutions to a maze by only including nodes on the current path in the visited set.)</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="topological-sorting">
+<h2>Topological Sorting<a class="headerlink" href="#topological-sorting" title="Permalink to this headline">¶</a></h2>
+<p>Topological sort gives the precise order in which we should do each of the steps (visit the graph nodes) in order to achieve our goal.</p>
+<p>A topological sort takes a <strong>directed acyclic graph (DAG)</strong> and produces a linear ordering of all its vertices such that if the graph G contains an edge <code class="docutils literal notranslate"><span class="pre">(v,</span> <span class="pre">u)</span></code> then the vertex <code class="docutils literal notranslate"><span class="pre">v</span></code> comes before the vertex <code class="docutils literal notranslate"><span class="pre">u</span></code> in the ordering. Directed acyclic graphs are used in many applications to indicate the precedence of events. The topological sort is a simple but useful adaptation of a depth first search.</p>
+<p>The algorithm for the topological sort is as follows:</p>
+<ol class="simple">
+<li><p>Call dfs(g) for some graph g. The main reason we want to call depth first search is to compute the finish times for each of the vertices.</p></li>
+<li><p>Store the vertices in a list in decreasing order of finish time.</p></li>
+<li><p>Return the ordered list as the result of the topological sort.</p></li>
+</ol>
+</div>
+<div class="section" id="strongly-connected-components">
+<h2>Strongly Connected Components<a class="headerlink" href="#strongly-connected-components" title="Permalink to this headline">¶</a></h2>
+<p>Strongly Connected Components (SCCs) can be thought of as self-contained cycles within a directed graph where every vertex in a given cycle can reach every other vertex in the same cycle.</p>
+<p>Once again we will see that we can create a very powerful and efficient algorithm by making use of a depth first search. Before we tackle the main SCC algorithm we must look at one other definition. The transposition of a graph <code class="docutils literal notranslate"><span class="pre">G</span></code> is defined as the graph <code class="docutils literal notranslate"><span class="pre">GT</span></code> where all the edges in the graph have been reversed. That is, if there is a directed edge from node <code class="docutils literal notranslate"><span class="pre">A</span></code> to node <code class="docutils literal notranslate"><span class="pre">B</span></code> in the original graph then <code class="docutils literal notranslate"><span class="pre">GT</span></code> will contain and edge from node <code class="docutils literal notranslate"><span class="pre">B</span></code> to node <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p>
+<p>Algorithm to compute the strongly connected components for a graph.</p>
+<ol class="simple">
+<li><p>Call dfs for the graph <code class="docutils literal notranslate"><span class="pre">G</span></code> to compute the finish times for each vertex.</p></li>
+<li><p>Compute GT.</p></li>
+<li><p>Call dfs for the graph <code class="docutils literal notranslate"><span class="pre">GT</span></code> but in the main loop of DFS explore each vertex in decreasing order of finish time.</p></li>
+<li><p>Each tree in the forest computed in step 3 is a strongly connected component. Output the vertex ids for each vertex in each tree in the forest to identify the component.</p></li>
+</ol>
+</div>
+<div class="section" id="shortest-path-problems">
+<h2>Shortest Path Problems<a class="headerlink" href="#shortest-path-problems" title="Permalink to this headline">¶</a></h2>
+<p>Given a weighted graph, find the shortest path of edges from node A to node B.</p>
+<p><img alt="graph" src="https://runestone.academy/runestone/books/published/pythonds/_images/routeGraph.png" /></p>
+<div class="section" id="dijkstras-algorithm">
+<h3>Dijkstra’s Algorithm<a class="headerlink" href="#dijkstras-algorithm" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="a-a-star-algorithm">
+<h3>A* (A Star) Algorithm<a class="headerlink" href="#a-a-star-algorithm" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="minimum-spanning-tree-mst">
+<h2>Minimum Spanning Tree (MST)<a class="headerlink" href="#minimum-spanning-tree-mst" title="Permalink to this headline">¶</a></h2>
+<p>A minimum spanning tree (MST) is a subset of the edges of a connected, edge-weighted graph that connects all the vertices together, without any cycles and with the minimum possible total edge weight.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./data-structures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="hash-table.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Hash Table</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../algorithms/intro.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Algorithms</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Ratan Kulshreshtha<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
