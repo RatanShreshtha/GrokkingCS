@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Object Oriented Programming &#8212; GrokkingCS</title>
+    <title>Greedy Algorithms &#8212; GrokkingCS</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Encapsulation" href="encapsulation.html" />
-    <link rel="prev" title="Dynamic Programming" href="../algorithms/dynamic.html" />
+    <link rel="next" title="Dynamic Programming" href="dynamic.html" />
+    <link rel="prev" title="Recursion" href="recursion.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -161,65 +161,65 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../algorithms/intro.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
    Algorithms
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../algorithms/sorting-and-searching.html">
+    <a class="reference internal" href="sorting-and-searching.html">
      Searching
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../algorithms/recursion.html">
+    <a class="reference internal" href="recursion.html">
      Recursion
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../algorithms/greedy.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Greedy Algorithms
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../algorithms/dynamic.html">
+    <a class="reference internal" href="dynamic.html">
      Dynamic Programming
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../object-oriented-programming/intro.html">
    Object Oriented Programming
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="encapsulation.html">
+    <a class="reference internal" href="../object-oriented-programming/encapsulation.html">
      Encapsulation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="abstraction.html">
+    <a class="reference internal" href="../object-oriented-programming/abstraction.html">
      Abstraction
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="inheritance.html">
+    <a class="reference internal" href="../object-oriented-programming/inheritance.html">
      Inheritance
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="polymorphism.html">
+    <a class="reference internal" href="../object-oriented-programming/polymorphism.html">
      Polymorphism
     </a>
    </li>
@@ -311,9 +311,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/object-oriented-programming/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/algorithms/greedy.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -331,7 +331,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/RatanShreshtha/GrokkingCS/issues/new?title=Issue%20on%20page%20%2Fobject-oriented-programming/intro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/RatanShreshtha/GrokkingCS/issues/new?title=Issue%20on%20page%20%2Falgorithms/greedy.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -347,56 +347,36 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/RatanShreshtha/GrokkingCS/main?urlpath=tree/src/algorithms/greedy.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/RatanShreshtha/GrokkingCS/blob/main/src/algorithms/greedy.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-oop">
-   Why OOP?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-blocks-of-oop">
-   Building blocks of OOP
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#classes">
-     classes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objects">
-     objects
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#attributes">
-     attributes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#methods">
-     methods
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bonus-material">
-   Bonus Material
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -405,52 +385,15 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="object-oriented-programming">
-<h1>Object Oriented Programming<a class="headerlink" href="#object-oriented-programming" title="Permalink to this headline">¶</a></h1>
-<p>Object Oriented Programming (OOP) is a programming paradigm that relies on the concept of classes and objects. In Object Oriented programming (OOP) related pieces of information and behaviors are grouped together into a template called a <strong>class</strong>. Then individual <strong>objects</strong> are created from the class template. The entire software program runs by having multiple objects interact with objects to create the larger program.</p>
-<div class="section" id="why-oop">
-<h2>Why OOP?<a class="headerlink" href="#why-oop" title="Permalink to this headline">¶</a></h2>
-<p>OOP makes code organized, reusable, and easy to maintain. It follows the DRY (Don’t Repeat Yourself) principle used by many programmers to make efficient programs. OOP also prevents unwanted access to data, or exposing proprietary code through encapsulation and abstraction.</p>
-</div>
-<div class="section" id="building-blocks-of-oop">
-<h2>Building blocks of OOP<a class="headerlink" href="#building-blocks-of-oop" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="classes">
-<h3>classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
-<p>Classes contain fields for attributes, and methods for behaviors. Classes are where the programmer creates a blueprint for the structure of methods and attributes.</p>
-</div>
-<div class="section" id="objects">
-<h3>objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h3>
-<p>Objects are instances of classes created with specific data.</p>
-</div>
-<div class="section" id="attributes">
-<h3>attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
-<p>Attributes are the information that is stored. Attributes are defined in the Class template. The state of an object is defined by the data in the object’s attributes fields.</p>
-</div>
-<div class="section" id="methods">
-<h3>methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
-<p>Methods represent behaviors. Methods perform actions; methods might return information about an object, or update an object’s data. The method’s code is defined in the class definition.</p>
-<p><img alt="Object Oriented Programming" src="object-oriented-programming/images/oop.png" /></p>
-</div>
-</div>
-<div class="section" id="bonus-material">
-<h2>Bonus Material<a class="headerlink" href="#bonus-material" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p>Oops! OOP’s not what I thought</p>
-<ul class="simple">
-<li><p>By Anjana Vakil</p></li>
-</ul>
-<p><a class="reference external" href="http://www.youtube.com/watch?v=qMdxExJCD5s"><img alt="Oops! OOP's not what I thought" src="http://img.youtube.com/vi/qMdxExJCD5s/0.jpg" /></a></p>
-</li>
-<li><p>Object Oriented Programming from scratch</p>
-<ul class="simple">
-<li><p>By Raymond Hettinger</p></li>
-</ul>
-<p><a class="reference external" href="http://www.youtube.com/watch?v=8moWQ1561FY"><img alt="Object Oriented Programming from scratch" src="http://img.youtube.com/vi/8moWQ1561FY/0.jpg" /></a></p>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="greedy-algorithms">
+<h1>Greedy Algorithms<a class="headerlink" href="#greedy-algorithms" title="Permalink to this headline">¶</a></h1>
+<p>Greedy is an algorithmic paradigm that builds up a solution piece by piece, always choosing the next piece that offers the most obvious and immediate benefit. Greedy algorithms are used for optimization problems.</p>
+<p>An optimization problem can be solved using greedy programming if the problem has the following properties:</p>
+<ol class="simple">
+<li><p>At every step, we can make a choice that looks best at the moment, and we get the optimal solution of the complete problem.</p></li>
+</ol>
+<p>If a Greedy Algorithm can solve a problem, then it generally becomes the best method to solve that problem.</p>
+<p>Greedy algorithms are in general more efficient than other techniques like Dynamic Programming, but greedy algorithms cannot always be applied.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -466,7 +409,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./object-oriented-programming"
+            path: "./algorithms"
         },
         predefinedOutput: true
     }
@@ -483,19 +426,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../algorithms/dynamic.html" title="previous page">
+        <a class="left-prev" href="recursion.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Dynamic Programming</p>
+                <p class="prevnext-title">Recursion</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="encapsulation.html" title="next page">
+        <a class="right-next" href="dynamic.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Encapsulation</p>
+                <p class="prevnext-title">Dynamic Programming</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

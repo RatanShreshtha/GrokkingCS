@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Object Oriented Programming" href="../object-oriented-programming/intro.html" />
-    <link rel="prev" title="Recursion" href="recursion.html" />
+    <link rel="prev" title="Greedy Algorithms" href="greedy.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -181,6 +181,11 @@
      Recursion
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="greedy.html">
+     Greedy Algorithms
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Dynamic Programming
@@ -306,7 +311,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/algorithms/dynamic-programming.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/algorithms/dynamic.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -326,7 +331,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/RatanShreshtha/GrokkingCS/issues/new?title=Issue%20on%20page%20%2Falgorithms/dynamic-programming.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/RatanShreshtha/GrokkingCS/issues/new?title=Issue%20on%20page%20%2Falgorithms/dynamic.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -347,7 +352,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/RatanShreshtha/GrokkingCS/main?urlpath=tree/src/algorithms/dynamic-programming.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/RatanShreshtha/GrokkingCS/main?urlpath=tree/src/algorithms/dynamic.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -355,7 +360,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/RatanShreshtha/GrokkingCS/blob/main/src/algorithms/dynamic-programming.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/RatanShreshtha/GrokkingCS/blob/main/src/algorithms/dynamic.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -418,7 +423,7 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="dynamic-programming">
 <h1>Dynamic Programming<a class="headerlink" href="#dynamic-programming" title="Permalink to this headline">¶</a></h1>
 <p>Dynamic Programming is mainly an optimization over plain recursion. Wherever we see a recursive solution that has repeated calls for same inputs, we can optimize it using Dynamic Programming. The idea is to simply store the results of subproblems, so that we do not have to re-compute them when needed later. This simple optimization reduces time complexities from exponential to polynomial.</p>
-<p>Following are the two main properties of a problem that suggests that the given problem can be solved using Dynamic programming.</p>
+<p>FAn optimization problem can be solved using dynamic programming if the problem has the following properties:</p>
 <ol class="simple">
 <li><p>Overlapping Subproblems</p></li>
 <li><p>Optimal Substructure</p></li>
@@ -570,11 +575,11 @@ shortest path from u to v is combination of shortest path from u to x and shorte
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="recursion.html" title="previous page">
+        <a class="left-prev" href="greedy.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Recursion</p>
+                <p class="prevnext-title">Greedy Algorithms</p>
             </div>
         </a>
     </div>
