@@ -18,7 +18,8 @@ chapters:
   sections:
   - file: algorithms/sorting-and-searching
   - file: algorithms/recursion
-  - file: algorithms/dynamic-programming
+  - file: algorithms/greedy
+  - file: algorithms/dynamic
 - file: object-oriented-programming/intro
   sections:
   - file: object-oriented-programming/encapsulation

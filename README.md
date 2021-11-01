@@ -2,10 +2,10 @@
 <br />
 <div align="center">
   <a href="https://github.com/RatanShreshtha/GrokkingCS">
-    <img src="src/logo.png" alt="Logo" width="180" height="180">
+    <img src="src/logo.png" alt="Logo" width="200" height="200">
   </a>
 
-  <h3 align="center">GrokkingCS</h3>
+  <h1 align="center">GrokkingCS</h1>
 
   <p align="center">
     A computer science guide for people in hurry.
