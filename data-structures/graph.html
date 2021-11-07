@@ -49,6 +49,8 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Algorithms" href="../algorithms/intro.html" />
@@ -88,8 +90,8 @@
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   GrokkingCS
+  <a class="reference internal" href="../index.html">
+   Introduction
   </a>
  </li>
 </ul>
@@ -227,7 +229,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../computer-organisation-and-architecture/intro.html">
-   computer Organisation And Architecture
+   Computer Organisation And Architecture
   </a>
  </li>
  <li class="toctree-l1">
@@ -352,7 +354,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/RatanShreshtha/GrokkingCS/main?urlpath=tree/src/data-structures/graph.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/RatanShreshtha/GrokkingCS/main?urlpath=lab/tree/src/data-structures/graph.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -415,9 +417,16 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tree">
-     Tree
+    <a class="reference internal nav-link" href="#trees">
+     Trees
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rooted-trees">
+       Rooted Trees
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#directed-acyclic-graphs-dags">
@@ -564,42 +573,315 @@
 <div class="section" id="undirected-graph">
 <h3>Undirected Graph<a class="headerlink" href="#undirected-graph" title="Permalink to this headline">¶</a></h3>
 <p>An undirected graph is a graph in which edges have no orientation. The edge (u, v) is identical to the edge (v, u).</p>
-<!-- ![Undirected Graph](images/graph/undirected_graph.png) -->
-</div>
+<div class="mermaid">
+            graph LR;
+    A((A))
+    B((B))
+    C((C))
+    D((D))
+    E((E))
+    F((F))
+
+    B---C;
+    B---D;
+    A---B;
+    A---C;
+    C---D;
+    C---E;
+    D---F;
+    E---F;
+        </div></div>
 <div class="section" id="directed-graph-digraph">
 <h3>Directed Graph (Digraph)<a class="headerlink" href="#directed-graph-digraph" title="Permalink to this headline">¶</a></h3>
 <p>A directed graph or digraph is a graph in which edges have orientations. For example, the edge (u, v) is the edge from node u to node v.</p>
-<!-- ![Directed Graph](images/graph/directed_graph.png) -->
-</div>
+<div class="mermaid">
+            graph LR;
+    A((A))
+    B((B))
+    C((C))
+    D((D))
+    E((E))
+    F((F))
+
+    A--&gt;B;
+    A--&gt;C;
+    B--&gt;D;
+    C--&gt;D;
+    D--&gt;E;
+    D--&gt;F;
+    E--&gt;F;
+        </div></div>
 <div class="section" id="weighted-graphs">
 <h3>Weighted Graphs<a class="headerlink" href="#weighted-graphs" title="Permalink to this headline">¶</a></h3>
 <p>Many graphs can have edges that contain a certain weight to represent an arbitrary value such as cost, distance, quantity, etc.</p>
-<!-- ![Weighted Graphs](images/graph/weighted_graph.png) -->
-</div>
+<div class="mermaid">
+            graph LR;
+    A((A))
+    B((B))
+    C((C))
+    D((D))
+    E((E))
+    F((F))
+
+    A-- 4 ---B;
+    A-- 2 ---C;
+    B-- 4 ---D;
+    D-- 1 --- F;
+    B-- 8 ---C;
+    C-- 3 ---D;
+    D-- 2 ---E;
+    D-- 1 ---F;
+    E-- 11 ---F;
+        </div></div>
 </div>
 <div class="section" id="special-graphs">
 <h2>Special Graphs<a class="headerlink" href="#special-graphs" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="tree">
-<h3>Tree<a class="headerlink" href="#tree" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="trees">
+<h3>Trees<a class="headerlink" href="#trees" title="Permalink to this headline">¶</a></h3>
 <p>A tree is an undirected graph with no cycles. Equivalently, it is a connected graph with N nodes and N-1 edges.</p>
-<!-- ![Tree](images/graph/tree.png) -->
+<div class="mermaid">
+            flowchart TB;
+
+    subgraph id1 [ ]
+    direction TB
+        a1((A))
+        a2((B))
+        a3((C))
+        a4((D))
+
+        a1---a2
+        a2---a3
+        a3---a4
+    end
+
+
+    subgraph id2 [ ]
+        direction TB
+        b1((A))
+        b2((B))
+        b3((C))
+        b4((D))
+        b5((E))
+        b6((F))
+
+        b1---b2
+        b1---b3
+        b2---b4
+        b2---b5
+        b3---b6
+    end
+
+
+    subgraph id3 [ ]
+        direction LR
+        c1((A))
+        c2((B))
+        c3((C))
+        c4((D))
+        c5((E))
+        c6((F))
+        c7((G))
+        c8((H))
+        c9((I))
+        
+        c1---c3
+        c2---c3
+        c3---c4
+        c3---c5
+        c3---c6
+        c4---c7
+        c5---c9
+        c5---c8
+    end
+        </div><div class="section" id="rooted-trees">
+<h4>Rooted Trees<a class="headerlink" href="#rooted-trees" title="Permalink to this headline">¶</a></h4>
+<p>A rooted tree is a tree with a designated root node where every edge either points away from or towards the root node. When edges point away from the root the graph is called an arborescence (out-tree) and anti-arborescence (in-tree) otherwise.</p>
+<div class="mermaid">
+            flowchart TB;
+
+    subgraph ide1 [ ]
+    direction RL
+        a1((A))
+        a2((B))
+        a3((C))
+        a4((D))
+
+        a2--&gt;a1
+        a3--&gt;a1
+        a4--&gt;a3
+    end
+
+    subgraph ide2 [ ]
+    direction TB
+        b1((A))
+        b2((B))
+        b3((C))
+        b4((D))
+        b5((E))
+        b6((F))
+        b7((G))
+
+        b1--&gt;b2
+        b1--&gt;b3
+        b2--&gt;b4
+        b2--&gt;b5
+        b3--&gt;b6
+        b3--&gt;b7
+        
+    end
+
+    subgraph ide3 [ ]
+    direction RL
+        c0((A))
+        c1((B))
+        c2((C))
+        c3((D))
+        c4((E))
+        c5((F))
+        c6((G))
+        c7((H))
+        c8((I))
+        c9((J))
+
+        c1--&gt;c0
+        c2--&gt;c0
+        c3--&gt;c0
+        c7--&gt;c0
+        c4--&gt;c1
+        c5--&gt;c1
+        c6--&gt;c1
+        c8--&gt;c2
+        c9--&gt;c2
+    end
+
+    style a1 fill:#FF8000
+    style b1 fill:#FF8000
+    style c0 fill:#FF8000
+        </div></div>
 </div>
 <div class="section" id="directed-acyclic-graphs-dags">
 <h3>Directed Acyclic Graphs (DAGs)<a class="headerlink" href="#directed-acyclic-graphs-dags" title="Permalink to this headline">¶</a></h3>
 <p>DAGs are directed graphs with no cycles. These graphs play an important role in representing structures with dependencies. Several efficient algorithms exist to operates on DAGs.</p>
 <p><em>Cool fact: All out-trees are DAGs but not all DAGs are out-trees.</em></p>
-<!-- ![Directed Acyclic Graphs](images/graph/directed_acyclic_graph.png) -->
-</div>
+<div class="mermaid">
+            flowchart TB;
+    subgraph ide1 [ ]
+    direction LR
+        a1((A))
+        a2((B))
+        a3((C))
+        a4((D))
+        a5((E))
+        a6((F))
+        a7((G))
+        a8((H))
+        a9((I))
+
+        a1--&gt;a2
+        a1--&gt;a3
+        a2--&gt;a4
+        a2--&gt;a5
+        a3--&gt;a4
+        a3--&gt;a5
+        a4--&gt;a6
+        a4--&gt;a7
+        a5--&gt;a8
+        a5--&gt;a9
+    end
+
+    subgraph ide2 [ ]
+    direction TB
+        b1((A))
+        b2((B))
+        b3((C))
+        b4((D))
+        b5((E))
+        b6((F))
+        b7((G))
+
+        b1--&gt;b2
+        b1--&gt;b3
+        b2--&gt;b4
+        b2--&gt;b5
+        b3--&gt;b6
+        b3--&gt;b7
+    end
+        </div></div>
 <div class="section" id="bipartite-graph">
 <h3>Bipartite Graph<a class="headerlink" href="#bipartite-graph" title="Permalink to this headline">¶</a></h3>
 <p>A bipartite graph is one whose vertices can be split into two independent groups U, V such that every edge connects betweens U and V.</p>
 <p>Other definitions exist such as: The graph is two colourable or there is no odd length cycle.</p>
-<!-- ![Bipartite Graphs](images/graph/bipartite.png) -->
-</div>
+<div class="mermaid">
+            flowchart LR;
+    a1((A))
+    a2((B))
+    a3((C))
+    a4((D))
+
+    b1((P))
+    b2((Q))
+    b3((R))
+    b4((S))
+
+    a1---b1
+    a1---b3
+    a1---b4
+    a2---b2
+    a2---b4
+    a3---b1
+    a3---b4
+    a4---b4
+   
+    style a1 fill:#FF8000
+    style a2 fill:#FF8000
+    style a3 fill:#FF8000
+    style a4 fill:#FF8000
+
+    style b1 fill:#FFFFFF
+    style b2 fill:#FFFFFF
+    style b3 fill:#FFFFFF
+    style b4 fill:#FFFFFF
+        </div></div>
 <div class="section" id="complete-graphs">
 <h3>Complete Graphs<a class="headerlink" href="#complete-graphs" title="Permalink to this headline">¶</a></h3>
 <p>A complete graph is one where there is a unique edge between every pair of nodes. A complete graph with n vertices is denoted as the graph Kn.</p>
-<!-- ![Complete Graphs](images/graph/complete_graph.png) --></div>
+<div class="mermaid">
+            flowchart BT;
+    subgraph id1 [K1]
+        a1((A))
+    end
+
+    subgraph id2 [K2]
+        b1((A))
+        b2((B))
+
+        b1---b2
+    end
+
+    subgraph id3 [K3]
+        c1((A))
+        c2((B))
+        c3((C))
+
+        c1---c2
+        c2---c3
+        c3---c1
+    end
+
+    subgraph id4 [K4]
+        d1((A))
+        d2((B))
+        d3((C))
+        d4((D))
+
+        d1---d2
+        d2---d3
+        d3---d4
+        d4---d1
+        d1---d3
+        d2---d4
+    end
+        </div></div>
 </div>
 <div class="section" id="representing-graphs">
 <h2>Representing Graphs<a class="headerlink" href="#representing-graphs" title="Permalink to this headline">¶</a></h2>

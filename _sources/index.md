@@ -1,4 +1,4 @@
-# GrokkingCS
+# Introduction
 
 **A computer science guide for people in hurry.**
 
