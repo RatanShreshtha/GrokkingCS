@@ -1,5 +1,5 @@
 format: jb-book
-root: intro
+root: index
 chapters:
 - file: basic-programming/intro
 - file: mathematics/intro
