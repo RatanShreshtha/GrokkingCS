@@ -24,7 +24,7 @@ Attributes are the information that is stored. Attributes are defined in the Cla
 
 Methods represent behaviors. Methods perform actions; methods might return information about an object, or update an object’s data. The method’s code is defined in the class definition.
 
-![Object Oriented Programming](./images/oop.png)
+<!-- ![Object Oriented Programming](./images/oop.png) -->
 
 ## Bonus Material
 

@@ -635,9 +635,9 @@
 <div class="section" id="load-balancing">
 <h2>Load Balancing<a class="headerlink" href="#load-balancing" title="Permalink to this headline">¶</a></h2>
 <p>Load Balancer (LB) is another critical component of any distributed system.  It helps to spread the traffic across a cluster of servers to improve  responsiveness and availability of applications, websites or databases.  LB also keeps track of the status of all the resources while  distributing requests. If a server is not available to take new requests or is not responding or has elevated error rate, LB will stop sending  traffic to such a server.</p>
-<p><img alt="image-20200809034311903" src="system-design/staticfiles/images/image-20200809034311903.png" /></p>
+<!-- ![image-20200809034311903](./staticfiles/images/image-20200809034311903.png) -->
 <p>Typically a load balancer  sits between the client and the server accepting incoming network and  application traffic and distributing the traffic across multiple backend servers using various algorithms. By balancing application requests  across multiple servers, a load balancer reduces individual server load  and prevents any one application server from becoming a single point of  failure, thus improving overall application availability and  responsiveness.</p>
-<p><img alt="image-20200809034241335" src="system-design/staticfiles/images/image-20200809034241335.png" /></p>
+<!-- ![image-20200809034241335](./staticfiles/images/image-20200809034241335.png) -->
 <p>To utilize full scalability and redundancy, we can try to balance the load at each layer of the system. We can add LBs at three places:</p>
 <ul class="simple">
 <li><p>Between the user and the web server</p></li>
@@ -746,7 +746,7 @@ Load balancers consider two factors before forwarding a request to a  backend se
 <p>The goal of creating an  index on a particular table in a database is to make it faster to search through the table and find the row or rows that we want. Indexes can be created using one or more columns of a database table, providing the  basis for both rapid random lookups and efficient access of ordered  records.</p>
 <p><strong>Example: A library catalog</strong></p>
 <p>A library catalog is a  register that contains the list of books found in a library. The catalog is organized like a database table generally with four columns: book  title, writer, subject, and date of publication. There are usually two  such catalogs: one sorted by the book title and one sorted by the writer name. That way, you can either think of a writer you want to read and  then look through their books or look up a specific book title you know  you want to read in case you don’t know the writer’s name. These  catalogs are like indexes for the database of books. They provide a  sorted list of data that is easily searchable by relevant information.</p>
-<p><img alt="image-20200809015308869" src="system-design/staticfiles/images/image-20200809015308869.png" /></p>
+<!-- ![image-20200809015308869](./staticfiles/images/image-20200809015308869.png) -->
 <p>Simply saying, an index is a data structure that can be perceived as a table of contents that  points us to the location where actual data lives. So when we create an  index on a column of a table, we store that column and a pointer to the  whole row in the index. Let’s assume a table containing a list of books, the following diagram shows how an index on the ‘Title’ column looks  like:</p>
 <p>Just like a traditional relational data store, we can also apply this  concept to larger datasets. The trick with indexes is that we must  carefully consider how users will access the data. In the case of data  sets that are many terabytes in size, but have very small payloads  (e.g., 1 KB), indexes are a necessity for optimizing data access.  Finding a small payload in such a large dataset can be a real challenge, since we can’t possibly iterate over that much data in any reasonable  time. Furthermore, it is very likely that such a large data set is  spread over several physical devices—this means we need some way to find the correct physical location of the desired data. Indexes are the best way to do this.</p>
 <div class="section" id="how-do-indexes-decrease-write-performance">
@@ -759,7 +759,7 @@ Load balancers consider two factors before forwarding a request to a  backend se
 <h2>Proxies<a class="headerlink" href="#proxies" title="Permalink to this headline">¶</a></h2>
 <p>A proxy server is an intermediate server between the client and the  back-end server. Clients connect to proxy servers to make a request for a service like a web page, file, connection, etc. In short, a <a class="reference external" href="https://en.wikipedia.org/wiki/Proxy_server">proxy server</a> is a piece of software or hardware that acts as an intermediary for requests from clients seeking resources from other servers.</p>
 <p>Typically, proxies are  used to filter requests, log requests, or sometimes transform requests  (by adding/removing headers, encrypting/decrypting, or compressing a  resource). Another advantage of a proxy server is that its cache can  serve a lot of requests. If multiple clients access a particular  resource, the proxy server can cache it and serve it to all the clients  without going to the remote server.</p>
-<p><img alt="image-20200809021558086" src="system-design/staticfiles/images/image-20200809021558086.png" /></p>
+<!-- ![image-20200809021558086](./staticfiles/images/image-20200809021558086.png) -->
 <div class="section" id="proxy-server-types">
 <h3>Proxy Server Types<a class="headerlink" href="#proxy-server-types" title="Permalink to this headline">¶</a></h3>
 <p>Proxies can reside on the  client’s local server or anywhere between the client and the remote  servers. Here are a few famous types of proxy servers:</p>
@@ -781,7 +781,7 @@ Load balancers consider two factors before forwarding a request to a  backend se
 <h2>Redundancy and Replication<a class="headerlink" href="#redundancy-and-replication" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Redundancy_(engineering)">Redundancy</a> is the duplication of critical components or functions of a system with the intention of increasing the reliability of the system, usually in  the form of a backup or fail-safe, or to improve actual system  performance. For example, if there is only one copy of a file stored on a single server, then losing that server means losing the file. Since  losing data is seldom a good thing, we can create duplicate or redundant copies of the file to solve this problem.</p>
 <p>Redundancy plays a key  role in removing the single points of failure in the system and provides backups if needed in a crisis. For example, if we have two instances of a service running in production and one fails, the system can failover  to the other one.</p>
-<p><img alt="image-20200809021824264" src="system-design/staticfiles/images/image-20200809021824264.png" /></p>
+<!-- ![image-20200809021824264](./staticfiles/images/image-20200809021824264.png) -->
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Replication_(computing)">Replication</a> means sharing information to ensure consistency between redundant  resources, such as software or hardware components, to improve  reliability, <a class="reference external" href="https://en.wikipedia.org/wiki/Fault_tolerance">fault-tolerance</a>, or accessibility.</p>
 <p>Replication is widely used in many database management systems (DBMS), usually with a  primary-replica relationship between the original and the copies. The  primary server gets all the updates, which then ripple through to the  replica servers. Each replica outputs a message stating that it has  received the update successfully, thus allowing the sending of  subsequent updates.</p>
 </div>
@@ -851,7 +851,7 @@ Load balancers consider two factors before forwarding a request to a  backend se
 <li><p><strong>Availability:</strong> Every request gets a response on success/failure. Availability is achieved by replicating the data across different servers.</p></li>
 <li><p><strong>Partition tolerance:</strong> The system continues to work despite message loss or partial failure. A system that is partition-tolerant can sustain any amount of network  failure that doesn’t result in a failure of the entire network. Data is  sufficiently replicated across combinations of nodes and networks to  keep the system up through intermittent outages.</p></li>
 </ul>
-<p><img alt="image-20200809033804638" src="system-design/staticfiles/images/image-20200809033804638.png" /></p>
+<!-- ![image-20200809033804638](./staticfiles/images/image-20200809033804638.png) -->
 <p>We cannot build a general data store that is continually available,  sequentially consistent, and tolerant to any partition failures. We can  only build a system that has any two of these three properties. Because, to be consistent, all nodes should see the same set of updates in the  same order. But if the network suffers a partition, updates in one  partition might not make it to the other partitions before a client  reads from the out-of-date partition after having read from the  up-to-date one. The only thing that can be done to cope with this  possibility is to stop serving requests from the out-of-date partition,  but then the service is no longer 100% available.</p>
 </div>
 <div class="section" id="consistent-hashing">
@@ -901,7 +901,7 @@ Load balancers consider two factors before forwarding a request to a  backend se
 <li><p>The server calculates the response.</p></li>
 <li><p>The server sends the response back to the client on the opened request.</p></li>
 </ol>
-<p><img alt="image-20200809040650240" src="system-design/staticfiles/images/image-20200809040650240.png" /></p>
+<!-- ![image-20200809040650240](./staticfiles/images/image-20200809040650240.png) -->
 <div class="section" id="ajax-polling">
 <h3>Ajax Polling<a class="headerlink" href="#ajax-polling" title="Permalink to this headline">¶</a></h3>
 <p>Polling is a standard  technique used by the vast majority of AJAX applications. The basic idea is that the client repeatedly polls (or requests) a server for data.  The client makes a request and waits for the server to respond with  data. If no data is available, an empty response is returned.</p>
@@ -912,7 +912,7 @@ Load balancers consider two factors before forwarding a request to a  backend se
 <li><p>The client repeats the above three steps periodically to get updates from the server.</p></li>
 </ol>
 <p>The problem with Polling  is that the client has to keep asking the server for any new data. As a  result, a lot of responses are empty, creating HTTP overhead.</p>
-<p><img alt="image-20200809040839152" src="system-design/staticfiles/images/image-20200809040839152.png" /></p>
+<!-- ![image-20200809040839152](./staticfiles/images/image-20200809040839152.png) -->
 </div>
 <div class="section" id="http-long-polling">
 <h3>HTTP Long-Polling<a class="headerlink" href="#http-long-polling" title="Permalink to this headline">¶</a></h3>
@@ -929,12 +929,12 @@ Load balancers consider two factors before forwarding a request to a  backend se
 <li><p>The client typically sends a new long-poll request, either  immediately upon receiving a response or after a pause to allow an  acceptable latency period.</p></li>
 <li><p>Each Long-Poll request has a timeout. The client has to reconnect periodically after the connection is closed due to timeouts.</p></li>
 </ol>
-<p><img alt="image-20200809040942568" src="system-design/staticfiles/images/image-20200809040942568.png" /></p>
+<!-- ![image-20200809040942568](./staticfiles/images/image-20200809040942568.png) -->
 </div>
 <div class="section" id="websockets">
 <h3>WebSockets<a class="headerlink" href="#websockets" title="Permalink to this headline">¶</a></h3>
 <p>WebSocket provides <a class="reference external" href="https://en.wikipedia.org/wiki/Duplex_(telecommunications)#Full_duplex">Full duplex</a> communication channels over a single TCP connection. It provides a persistent  connection between a client and a server that both parties can use to  start sending data at any time. The client establishes a WebSocket  connection through a process known as the WebSocket handshake. If the  process succeeds, then the server and client can exchange data in both  directions at any time. The WebSocket protocol enables communication between a client and a  server with lower overheads, facilitating real-time data transfer from  and to the server. This is made possible by providing a standardized way for the server to send content to the browser without being asked by  the client and allowing for messages to be passed back and forth while  keeping the connection open. In this way, a two-way (bi-directional)  ongoing conversation can take place between a client and a server.</p>
-<p><img alt="image-20200809041038862" src="system-design/staticfiles/images/image-20200809041038862.png" /></p>
+<!-- ![image-20200809041038862](./staticfiles/images/image-20200809041038862.png) -->
 </div>
 <div class="section" id="server-sent-events-sses">
 <h3>Server-Sent Events (SSEs)<a class="headerlink" href="#server-sent-events-sses" title="Permalink to this headline">¶</a></h3>
@@ -945,7 +945,7 @@ Load balancers consider two factors before forwarding a request to a  backend se
 <li><p>The server sends the data to the client whenever there’s new information available.</p></li>
 </ol>
 <p>SSEs are best when we need real-time traffic from the server to the client or if the server is  generating data in a loop and will be sending multiple events to the  client.</p>
-<p><img alt="image-20200809041114808" src="system-design/staticfiles/images/image-20200809041114808.png" /></p>
+<!-- ![image-20200809041114808](./staticfiles/images/image-20200809041114808.png) -->
 </div>
 </div>
 </div>
