@@ -51,11 +51,11 @@ Another important  consideration while designing a distributed system is how eas
 
 Load Balancer (LB) is another critical component of any distributed system.  It helps to spread the traffic across a cluster of servers to improve  responsiveness and availability of applications, websites or databases.  LB also keeps track of the status of all the resources while  distributing requests. If a server is not available to take new requests or is not responding or has elevated error rate, LB will stop sending  traffic to such a server.
 
-![image-20200809034311903](./staticfiles/images/image-20200809034311903.png)
+<!-- ![image-20200809034311903](./staticfiles/images/image-20200809034311903.png) -->
 
 Typically a load balancer  sits between the client and the server accepting incoming network and  application traffic and distributing the traffic across multiple backend servers using various algorithms. By balancing application requests  across multiple servers, a load balancer reduces individual server load  and prevents any one application server from becoming a single point of  failure, thus improving overall application availability and  responsiveness.
 
-![image-20200809034241335](./staticfiles/images/image-20200809034241335.png)
+<!-- ![image-20200809034241335](./staticfiles/images/image-20200809034241335.png) -->
 
 To utilize full scalability and redundancy, we can try to balance the load at each layer of the system. We can add LBs at three places:
 
@@ -184,7 +184,7 @@ The goal of creating an  index on a particular table in a database is to make it
 
 A library catalog is a  register that contains the list of books found in a library. The catalog is organized like a database table generally with four columns: book  title, writer, subject, and date of publication. There are usually two  such catalogs: one sorted by the book title and one sorted by the writer name. That way, you can either think of a writer you want to read and  then look through their books or look up a specific book title you know  you want to read in case you don’t know the writer’s name. These  catalogs are like indexes for the database of books. They provide a  sorted list of data that is easily searchable by relevant information.
 
-![image-20200809015308869](./staticfiles/images/image-20200809015308869.png)
+<!-- ![image-20200809015308869](./staticfiles/images/image-20200809015308869.png) -->
 
 Simply saying, an index is a data structure that can be perceived as a table of contents that  points us to the location where actual data lives. So when we create an  index on a column of a table, we store that column and a pointer to the  whole row in the index. Let’s assume a table containing a list of books, the following diagram shows how an index on the ‘Title’ column looks  like:
 
@@ -201,7 +201,7 @@ A proxy server is an intermediate server between the client and the  back-end se
 
 Typically, proxies are  used to filter requests, log requests, or sometimes transform requests  (by adding/removing headers, encrypting/decrypting, or compressing a  resource). Another advantage of a proxy server is that its cache can  serve a lot of requests. If multiple clients access a particular  resource, the proxy server can cache it and serve it to all the clients  without going to the remote server.
 
-![image-20200809021558086](./staticfiles/images/image-20200809021558086.png)
+<!-- ![image-20200809021558086](./staticfiles/images/image-20200809021558086.png) -->
 
 ### Proxy Server Types
 
@@ -226,7 +226,7 @@ A [reverse proxy](https://en.wikipedia.org/wiki/Reverse_proxy) retrieves resourc
 
 Redundancy plays a key  role in removing the single points of failure in the system and provides backups if needed in a crisis. For example, if we have two instances of a service running in production and one fails, the system can failover  to the other one.
 
-![image-20200809021824264](./staticfiles/images/image-20200809021824264.png)
+<!-- ![image-20200809021824264](./staticfiles/images/image-20200809021824264.png) -->
 
 [Replication](https://en.wikipedia.org/wiki/Replication_(computing)) means sharing information to ensure consistency between redundant  resources, such as software or hardware components, to improve  reliability, [fault-tolerance](https://en.wikipedia.org/wiki/Fault_tolerance), or accessibility.
 
@@ -303,7 +303,7 @@ CAP theorem states that it is impossible for a distributed software system  to s
 
 - **Partition tolerance:** The system continues to work despite message loss or partial failure. A system that is partition-tolerant can sustain any amount of network  failure that doesn’t result in a failure of the entire network. Data is  sufficiently replicated across combinations of nodes and networks to  keep the system up through intermittent outages.
 
-![image-20200809033804638](./staticfiles/images/image-20200809033804638.png)
+<!-- ![image-20200809033804638](./staticfiles/images/image-20200809033804638.png) -->
 
 We cannot build a general data store that is continually available,  sequentially consistent, and tolerant to any partition failures. We can  only build a system that has any two of these three properties. Because, to be consistent, all nodes should see the same set of updates in the  same order. But if the network suffers a partition, updates in one  partition might not make it to the other partitions before a client  reads from the out-of-date partition after having read from the  up-to-date one. The only thing that can be done to cope with this  possibility is to stop serving requests from the out-of-date partition,  but then the service is no longer 100% available.
 
@@ -360,7 +360,7 @@ Long-Polling, WebSockets, and Server-Sent Events are popular communication proto
 2. The server calculates the response.
 3. The server sends the response back to the client on the opened request.
 
-![image-20200809040650240](./staticfiles/images/image-20200809040650240.png)
+<!-- ![image-20200809040650240](./staticfiles/images/image-20200809040650240.png) -->
 
 ### Ajax Polling
 
@@ -373,7 +373,7 @@ Polling is a standard  technique used by the vast majority of AJAX applications.
 
 The problem with Polling  is that the client has to keep asking the server for any new data. As a  result, a lot of responses are empty, creating HTTP overhead.
 
-![image-20200809040839152](./staticfiles/images/image-20200809040839152.png)
+<!-- ![image-20200809040839152](./staticfiles/images/image-20200809040839152.png) -->
 
 ### HTTP Long-Polling
 
@@ -390,13 +390,13 @@ The basic life cycle of an application using HTTP Long-Polling is as follows:
 4. The client typically sends a new long-poll request, either  immediately upon receiving a response or after a pause to allow an  acceptable latency period.
 5. Each Long-Poll request has a timeout. The client has to reconnect periodically after the connection is closed due to timeouts.
 
-![image-20200809040942568](./staticfiles/images/image-20200809040942568.png)
+<!-- ![image-20200809040942568](./staticfiles/images/image-20200809040942568.png) -->
 
 ### WebSockets 
 
 WebSocket provides [Full duplex](https://en.wikipedia.org/wiki/Duplex_(telecommunications)#Full_duplex) communication channels over a single TCP connection. It provides a persistent  connection between a client and a server that both parties can use to  start sending data at any time. The client establishes a WebSocket  connection through a process known as the WebSocket handshake. If the  process succeeds, then the server and client can exchange data in both  directions at any time. The WebSocket protocol enables communication between a client and a  server with lower overheads, facilitating real-time data transfer from  and to the server. This is made possible by providing a standardized way for the server to send content to the browser without being asked by  the client and allowing for messages to be passed back and forth while  keeping the connection open. In this way, a two-way (bi-directional)  ongoing conversation can take place between a client and a server.
 
-![image-20200809041038862](./staticfiles/images/image-20200809041038862.png)
+<!-- ![image-20200809041038862](./staticfiles/images/image-20200809041038862.png) -->
 
 ### Server-Sent Events (SSEs)
 
@@ -408,4 +408,4 @@ Under SSEs the client  establishes a persistent and long-term connection with th
 
 SSEs are best when we need real-time traffic from the server to the client or if the server is  generating data in a loop and will be sending multiple events to the  client.
 
-![image-20200809041114808](./staticfiles/images/image-20200809041114808.png)
+<!-- ![image-20200809041114808](./staticfiles/images/image-20200809041114808.png) -->
