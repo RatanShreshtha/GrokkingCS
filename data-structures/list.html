@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lists &#8212; GrokkingCS</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -56,7 +56,10 @@
     <link rel="next" title="Trees" href="tree.html" />
     <link rel="prev" title="Deque" href="deque.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -422,8 +425,25 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="lists">
 <h1>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h1>
 <p>A list is a collection of items where each item holds a relative position with respect to the others. More specifically, we will refer to this type of list as an <strong>unordered list</strong>. We can consider the list as having a first item, a second item, a third item, and so on. We can also refer to the beginning of the list (the first item or the end of the list (the last item).</p>
-<p><img alt="linkedlist" src="https://runestone.academy/runestone/books/published/pythonds/_images/linkedlist.png" /></p>
-<div class="section" id="unordered-list-abstract-data-type">
+<div class="mermaid">
+            flowchart LR;
+    head[/head\]
+    a[54]
+    b[23]
+    c[12]
+    d[78]
+    e[89]
+    f[42]
+    null((null))
+
+    head--&gt;a
+    a --next--&gt; b
+    b --next--&gt; c
+    c --next--&gt; d
+    d --next--&gt; e
+    e --next--&gt; f
+    f --next--&gt; null
+        </div><div class="section" id="unordered-list-abstract-data-type">
 <h2>Unordered List Abstract Data Type<a class="headerlink" href="#unordered-list-abstract-data-type" title="Permalink to this headline">¶</a></h2>
 <p>The structure of an unordered list, as described above, is a collection of items where each item holds a relative position with respect to the others. Some possible unordered list operations are given below.</p>
 <ul class="simple">
@@ -708,31 +728,22 @@
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="deque.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Deque</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="deque.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Deque</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="tree.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Trees</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="tree.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Trees</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -753,8 +764,7 @@
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deque &#8212; GrokkingCS</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -56,7 +56,10 @@
     <link rel="next" title="Lists" href="list.html" />
     <link rel="prev" title="Queue" href="queue.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -434,8 +437,36 @@
 <h1>Deque<a class="headerlink" href="#deque" title="Permalink to this headline">¶</a></h1>
 <p>A deque, also known as a double-ended queue, is an ordered collection of items similar to the <strong>queue</strong>. It has two ends, a <strong>front</strong> and a <strong>rear</strong>, and the items remain positioned in the collection. What makes a deque different is the <strong>unrestrictive nature of adding and removing items</strong>. New items can be added at either the front or the rear. Likewise, existing items can be removed from either end. In a sense, this hybrid linear structure provides all the capabilities of stacks and queues in a single data structure.</p>
 <p>It is important to note that even though the deque can assume many of the characteristics of stacks and queues, it does not require the <strong>LIFO</strong> and <strong>FIFO</strong> orderings that are enforced by those data structures.</p>
-<p><img alt="Deque" src="https://runestone.academy/runestone/books/published/pythonds/_images/basicdeque.png" /></p>
-<p><strong>Examples</strong></p>
+<div class="mermaid">
+            flowchart TB;
+    subgraph id3 [ ]
+    direction TB
+        c1(Add to front)
+        c2(Remove from front)
+    end
+
+    subgraph id2 [Deque]
+    direction TB
+        b1(3.14)
+        b2(True)
+        b3(dog)
+        b4(20)
+    end
+
+    subgraph id1 [ ]
+    direction TB
+        a1(Add to rear)
+        a2(Remove from rear)
+    end
+
+    a1--&gt;b1
+    b1--&gt;a2
+    c1--&gt;b4
+    b4--&gt;c2
+
+    style id1 fill:#FFFFFF, stroke-width:0px
+    style id3 fill:#FFFFFF, stroke-width:0px
+        </div><p><strong>Examples</strong></p>
 <ul class="simple">
 <li><p>Cine for getting a movie ticket.</p></li>
 <li><p>Check-out line at a grocery store, and we wait in the cafeteria line (so that we can pop the tray stack).</p></li>
@@ -656,31 +687,22 @@ True
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="queue.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Queue</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="queue.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Queue</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="list.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lists</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="list.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Lists</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -701,8 +723,7 @@ True
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

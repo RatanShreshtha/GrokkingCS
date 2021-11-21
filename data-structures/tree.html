@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trees &#8212; GrokkingCS</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -56,7 +56,10 @@
     <link rel="next" title="Heap" href="heap.html" />
     <link rel="prev" title="Lists" href="list.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -474,7 +477,64 @@
 <h1>Trees<a class="headerlink" href="#trees" title="Permalink to this headline">¶</a></h1>
 <p>Tree data structure has a <strong>root</strong>, <strong>branches</strong>, and <strong>leaves</strong>. The difference between a tree in nature and a tree in computer science is that a tree data structure has its <em>root at the top</em> and its <em>leaves on the bottom</em>.</p>
 <p>Trees are used in many areas of computer science, including operating systems, graphics, database systems, and computer networking. Tree data structures have many things in common with their botanical cousins.</p>
-<p><strong>Example</strong></p>
+<div class="mermaid">
+            flowchart TB;
+    a((a))
+    b1((b1))
+    b2((b2))
+    c1((c1))
+    c2((c2))
+    c3((c3))
+    c4((c4))
+    c5((c5))
+    d1((d1))
+    d2((d2))
+    d3((d3))
+    d4((d4))
+    d5((d5))
+    d6((d6))
+    d7((d7))
+    e1((e1))
+    e2((e2))
+    e3((e3))
+    e4((e4))
+    e5((e5))
+    f1((f1))
+
+    a --&gt; b1
+    a --&gt; b2
+    b1 --&gt; c1
+    b1 --&gt; c2
+    b2 --&gt; c3
+    b2 --&gt; c4
+    b2 --&gt; c5
+    c1 --&gt; d1
+    c2 --&gt; d2
+    c2 --&gt; d3
+    c3 --&gt; d4
+    c4 --&gt; d5
+    c4 --&gt; d6
+    c4 --&gt; d7
+    d2 --&gt; e1
+    d2 --&gt; e2
+    d5 --&gt; e3
+    d5 --&gt; e4
+    d5 --&gt; e5
+    e4 --&gt; f1
+
+    style a fill:#FF8000
+    style c5 fill:#9eea00
+    style d1 fill:#9eea00
+    style d3 fill:#9eea00
+    style d4 fill:#9eea00
+    style d6 fill:#9eea00
+    style d7 fill:#9eea00
+    style e1 fill:#9eea00
+    style e2 fill:#9eea00
+    style e3 fill:#9eea00
+    style e5 fill:#9eea00
+    style f1 fill:#9eea00
+        </div><p><strong>Example</strong></p>
 <ol class="simple">
 <li><p>Taxonomic classification tree from biology.</p></li>
 <li><p>Computer file system for storing data. In a file system, directories, or folders, are structured as a tree.</p></li>
@@ -835,31 +895,22 @@ r
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="list.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Lists</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="list.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Lists</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="heap.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Heap</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="heap.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Heap</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -880,8 +931,7 @@ r
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

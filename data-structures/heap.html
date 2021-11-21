@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Heap &#8212; GrokkingCS</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -56,7 +56,10 @@
     <link rel="next" title="Priority Queue" href="priority-queue.html" />
     <link rel="prev" title="Trees" href="tree.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -426,8 +429,31 @@
 <li><p><strong>Max-Heap</strong>: Key present at the root node must be greatest among the keys present at all of it’s children. The same property must be recursively true for all sub-trees in that Binary Tree.</p></li>
 <li><p><strong>Min-Heap</strong>: key present at the root node must be minimum among the keys present at all of it’s children. The same property must be recursively true for all sub-trees in that Binary Tree.</p></li>
 </ol>
-<p><img alt="heap" src="https://runestone.academy/runestone/books/published/pythonds/_images/heapOrder.png" /></p>
-<div class="section" id="binary-heap-abstract-data-type">
+<div class="mermaid">
+            flowchart TB;
+    a((15))
+    b1((19))
+    b2((21))
+    c1((26))
+    c2((29))
+    c3((31))
+    c4((35))
+    d1((39))
+    d2((47))
+    d3((57))
+    d4((71))
+    
+    a --&gt; b1
+    a --&gt; b2
+    b1 --&gt; c1
+    b1 --&gt; c2
+    b2 --&gt; c3
+    b2 --&gt; c4
+    c1 --&gt; d1
+    c1 --&gt; d2
+    c2 --&gt; d3
+    c2 --&gt; d4
+        </div><div class="section" id="binary-heap-abstract-data-type">
 <h2>Binary Heap Abstract Data Type<a class="headerlink" href="#binary-heap-abstract-data-type" title="Permalink to this headline">¶</a></h2>
 <p>The Binary Heap abstract data type is defined by the following structure and operations. A Binary Heap is structured, as described above, as an ordered collection of items where items are added to and removed from the end called the <strong>top</strong>. Binary Heaps are ordered <strong>LIFO</strong>.</p>
 <div class="section" id="binary-heap-operations">
@@ -579,31 +605,22 @@
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="tree.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Trees</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="tree.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Trees</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="priority-queue.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Priority Queue</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="priority-queue.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Priority Queue</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -624,8 +641,7 @@
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

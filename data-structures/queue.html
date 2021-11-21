@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Queue &#8212; GrokkingCS</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -56,7 +56,10 @@
     <link rel="next" title="Deque" href="deque.html" />
     <link rel="prev" title="Stack" href="stack.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -442,8 +445,32 @@
 <h1>Queue<a class="headerlink" href="#queue" title="Permalink to this headline">¶</a></h1>
 <p>A queue is an ordered collection of items where the addition of new items happens at one end, called the <strong>“rear”</strong>, and the removal of existing items occurs at the other end, commonly called the <strong>“front”</strong>. As an element enters the queue it starts at the rear and makes its way toward the front, waiting it is the next element to be removed.</p>
 <p>The most recently added item in the queue must wait at the end of the collection. The item that has been in the collection the longest is at the front. This ordering principle is sometimes called <strong>FIFO(first-in, first-out)</strong>. It is also known as “first-come first-served.”</p>
-<p><img alt="queue" src="https://runestone.academy/runestone/books/published/pythonds/_images/basicqueue.png" /></p>
-<p><strong>Examples</strong></p>
+<div class="mermaid">
+            flowchart BT;
+    subgraph id3 [ ]
+    direction LR
+        c1(Remove from front)
+    end
+
+    subgraph id2 [Queue]
+    direction LR
+        b1(3.14)
+        b2(True)
+        b3(dog)
+        b4(20)
+    end
+
+    subgraph id1 [ ]
+    direction LR
+        a1(Add to rear)
+    end
+
+    a1--&gt;b1
+    c1--&gt;b4
+
+    style id1 fill:#FFFFFF, stroke-width:0px
+    style id3 fill:#FFFFFF, stroke-width:0px
+        </div><p><strong>Examples</strong></p>
 <ul class="simple">
 <li><p>Cine for getting a movie ticket.</p></li>
 <li><p>Check-out line at a grocery store, and we wait in the cafeteria line (so that we can pop the tray stack).</p></li>
@@ -650,31 +677,22 @@ dog
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="stack.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Stack</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="stack.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Stack</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="deque.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Deque</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="deque.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Deque</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -695,8 +713,7 @@ dog
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
