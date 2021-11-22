@@ -409,32 +409,6 @@
    Implementing a Queue in Python
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#practice-problem">
-   Practice Problem
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#write-a-function-hot-potato-names-num-that-simulates-the-game-of-hot-potato">
-     Write a function
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       hot_potato(names,
-      </span>
-      <span class="pre">
-       num)
-      </span>
-     </code>
-     that simulates the game of Hot Potato.
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simulation-printing-tasks">
-     Simulation: Printing Tasks
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
             </nav>
@@ -585,7 +559,7 @@
 <p>Python provides <code class="docutils literal notranslate"><span class="pre">List</span></code> an ordered collection mechanism and a set of methods, rear is at position 0 in the list. This allows us to use the insert function on lists to add new elements to the <strong>rear</strong> of the queue. The pop operation can be used to remove the <strong>front</strong> element (the last element of the list). Recall that this also means that enqueue will be O(n) and dequeue will be O(1).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Queue</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PriorityQueue</span><span class="p">:</span>
     
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
@@ -608,7 +582,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new queue</span>
-<span class="n">q</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+<span class="n">pq</span> <span class="o">=</span> <span class="n">PriorityQueue</span><span class="p">()</span>
 
 <span class="c1"># Check if the queue is empty</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pq</span><span class="o">.</span><span class="n">is_empty</span><span class="p">())</span>
@@ -643,54 +617,15 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2028</span><span class="o">/</span><span class="mf">1498245590.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Check if the queue is empty</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="n">pq</span><span class="o">.</span><span class="n">is_empty</span><span class="p">())</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> 
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># Enqueue 4 at rear of queue</span>
-
-<span class="ne">NameError</span>: name &#39;pq&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+3
+False
+4
+dog
+2
 </pre></div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="practice-problem">
-<h2>Practice Problem<a class="headerlink" href="#practice-problem" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="write-a-function-hot-potato-names-num-that-simulates-the-game-of-hot-potato">
-<h3>Write a function <code class="docutils literal notranslate"><span class="pre">hot_potato(names,</span> <span class="pre">num)</span></code> that simulates the game of Hot Potato.<a class="headerlink" href="#write-a-function-hot-potato-names-num-that-simulates-the-game-of-hot-potato" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hot_potato</span><span class="p">(</span><span class="n">namelist</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
-    <span class="n">simqueue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">namelist</span><span class="p">:</span>
-        <span class="n">simqueue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-
-    <span class="k">while</span> <span class="n">simqueue</span><span class="o">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-            <span class="n">simqueue</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="n">simqueue</span><span class="o">.</span><span class="n">dequeue</span><span class="p">())</span>
-
-        <span class="n">simqueue</span><span class="o">.</span><span class="n">dequeue</span><span class="p">()</span>
-
-    <span class="k">return</span> <span class="n">simqueue</span><span class="o">.</span><span class="n">dequeue</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">hot_potato</span><span class="p">([</span><span class="s2">&quot;Bill&quot;</span><span class="p">,</span><span class="s2">&quot;David&quot;</span><span class="p">,</span><span class="s2">&quot;Susan&quot;</span><span class="p">,</span><span class="s2">&quot;Jane&quot;</span><span class="p">,</span><span class="s2">&quot;Kent&quot;</span><span class="p">,</span><span class="s2">&quot;Brad&quot;</span><span class="p">],</span> <span class="mi">10</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jane
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="simulation-printing-tasks">
-<h3>Simulation: Printing Tasks<a class="headerlink" href="#simulation-printing-tasks" title="Permalink to this headline">¶</a></h3>
-<p>On any average day about 10 students are working in the lab at any given hour. These students typically print up to twice during that time, and the length of these tasks ranges from 1 to 20 pages. The printer in the lab is older, capable of processing 10 pages per minute of draft quality. The printer could be switched to give better quality, but then it would produce only five pages per minute. The slower printing speed could make students wait too long. What page rate should be used?</p>
 </div>
 </div>
 </div>
