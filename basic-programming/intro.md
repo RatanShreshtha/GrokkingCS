@@ -1,5 +1,13 @@
 # Basic Programming
 
-In this section, we will review the programming language Python and also provide some more detailed examples of the ideas from the previous section. If you are new to Python or find that you need more information about any of the topics presented, we recommend that you consult a resource such as The Python Language Reference, The Python Tutorial, or other document available at https://docs.python.org/. Our goal here is to reacquaint you with the language and also reinforce some of the concepts that will be central to later chapters.
+Programming is the process of taking an algorithm and encoding it into a notation, a programming language, so that it can be executed by a computer. Although many programming languages and many different types of computers exist, the important first step is the need to have the solution. Without an algorithm there can be no program.
 
-Python is a modern, easy-to-learn, object-oriented programming language. It has a powerful set of built-in data types and easy-to-use control constructs.
+Computer science is not the study of programming. Programming, however, is an important part of what a computer scientist does. Programming is often the way that we create a representation for our solutions. Therefore, this language representation and the process of creating it becomes a fundamental part of the discipline.
+
+In this book, we will be using a programming language called **Python**. Python is a modern, easy-to-learn, object-oriented programming language. It has a powerful set of built-in data types and easy-to-use control constructs.
+
+If you are new to Python or find that you need more practice, you can learn python from the following resources.
+
+- [The Python Tutorial](https://docs.python.org/3/tutorial/)
+- [Python for you and me](https://pymbook.readthedocs.io/en/latest/)
+- [Dive Into Python 3](https://diveintopython3.net/)
