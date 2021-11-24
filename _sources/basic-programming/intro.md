@@ -6,8 +6,4 @@ Computer science is not the study of programming. Programming, however, is an im
 
 In this book, we will be using a programming language called **Python**. Python is a modern, easy-to-learn, object-oriented programming language. It has a powerful set of built-in data types and easy-to-use control constructs.
 
-If you are new to Python or find that you need more practice, you can learn python from the following resources.
-
-- [The Python Tutorial](https://docs.python.org/3/tutorial/)
-- [Python for you and me](https://pymbook.readthedocs.io/en/latest/)
-- [Dive Into Python 3](https://diveintopython3.net/)
+Next section is a crash course in Python.
