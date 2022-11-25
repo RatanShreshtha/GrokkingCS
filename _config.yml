@@ -50,3 +50,4 @@ html:
 sphinx:
   extra_extensions:
     - sphinxcontrib.mermaid
+    - sphinx_proof
