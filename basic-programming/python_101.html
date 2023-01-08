@@ -1001,7 +1001,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">hello</span>
 
 <span class="ne">NameError</span>: name &#39;hello&#39; is not defined
@@ -1395,7 +1395,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;This is a docstring. It is used to explain how the code works and is optional (but encouraged).&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This is a docstring. It is used to explain how the code works and is optional (but encouraged).&quot;&quot;&quot;</span>
     <span class="c1"># this is a comment; it allows us to annotate the code</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Performing addition&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
@@ -1574,7 +1574,7 @@ add(x, y)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_positive</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns a positive x&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns a positive x&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">x</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
     <span class="k">return</span> <span class="n">x</span>
@@ -1838,18 +1838,18 @@ For meat we need to buy 0
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Calculator</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;This is the class docstring.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This is the class docstring.&quot;&quot;&quot;</span>
     
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;This is a method and it is called when we create an object of type `Calculator`.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This is a method and it is called when we create an object of type `Calculator`.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">on</span> <span class="o">=</span> <span class="kc">False</span>
         
     <span class="k">def</span> <span class="nf">turn_on</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;This method turns on the calculator.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This method turns on the calculator.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">on</span> <span class="o">=</span> <span class="kc">True</span>
     
     <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Perform addition if calculator is on&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Perform addition if calculator is on&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">on</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
         <span class="k">else</span><span class="p">:</span>
