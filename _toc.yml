@@ -15,6 +15,7 @@ chapters:
   - file: data-structures/heap
   - file: data-structures/priority-queue
   - file: data-structures/hash-table
+  - file: data-structures/union-find
   - file: data-structures/graph
 - file: algorithms/intro
   sections:
