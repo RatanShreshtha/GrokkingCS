@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Algorithms" href="../algorithms/intro.html" />
-    <link rel="prev" title="Hash Table" href="hash-table.html" />
+    <link rel="prev" title="Union-Find" href="union-find.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -187,6 +187,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="hash-table.html">
      Hash Table
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="union-find.html">
+     Union-Find
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -1534,11 +1539,12 @@ We can augment either BFS or DFS when we first discover a new vertex, color it o
     <span class="n">nodes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 
     <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">edges</span> <span class="ow">in</span> <span class="n">old_graph</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">nodes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
-            <span class="n">nodes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
-            <span class="n">nodes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-            <span class="n">graph</span><span class="p">[</span><span class="n">edge</span><span class="p">]</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">edge</span><span class="p">,</span> <span class="nb">set</span><span class="p">())</span> <span class="o">|</span> <span class="nb">set</span><span class="p">([</span><span class="n">node</span><span class="p">])</span>
-
+            <span class="n">neighbour</span><span class="p">,</span> <span class="n">weight</span> <span class="o">=</span> <span class="n">edge</span>
+            <span class="n">nodes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">neighbour</span><span class="p">)</span>
+            <span class="n">graph</span><span class="p">[</span><span class="n">neighbour</span><span class="p">]</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">neighbour</span><span class="p">,</span> <span class="nb">set</span><span class="p">())</span> <span class="o">|</span> <span class="nb">set</span><span class="p">([</span><span class="n">node</span><span class="p">])</span>
+    
     <span class="n">nodes_without_prerequisites</span> <span class="o">=</span> <span class="n">nodes</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">graph</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 
     <span class="k">while</span> <span class="n">nodes_without_prerequisites</span><span class="p">:</span>
@@ -1562,14 +1568,22 @@ We can augment either BFS or DFS when we first discover a new vertex, color it o
     <span class="k">return</span> <span class="n">order</span>
 
 
-<span class="n">graph</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">3</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">4</span><span class="p">:</span> <span class="p">[</span>
-    <span class="mi">6</span><span class="p">],</span> <span class="mi">5</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="mi">6</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="mi">9</span><span class="p">:</span> <span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="mi">10</span><span class="p">:</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="mi">11</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">]}</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)],</span>
+    <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)],</span>
+    <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)],</span>
+    <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)],</span>
+    <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">)],</span>
+    <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)],</span>
+    <span class="s1">&#39;G&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)],</span>
+    <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)],</span>
+<span class="p">}</span>
 <span class="n">topological_sort</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5, 6, 9, 10, 11, 7, 8]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;G&#39;, &#39;E&#39;, &#39;H&#39;, &#39;F&#39;, &#39;I&#39;]
 </pre></div>
 </div>
 </div>
@@ -1598,16 +1612,22 @@ We can augment either BFS or DFS when we first discover a new vertex, color it o
     D((D))
     E((E))
     F((F))
+    G((G))
+    H((H))
+    I((I))
 
-    A-- 4 ---B;
-    A-- 2 ---C;
-    B-- 4 ---D;
-    D-- 1 --- F;
-    B-- 8 ---C;
-    C-- 3 ---D;
-    D-- 2 ---E;
-    D-- 1 ---F;
-    E-- 11 ---F;
+    A-- 4 --&gt;B;
+    A-- 2 --&gt;C;
+    B-- 4 --&gt;D;
+    B-- 8 --&gt;C;
+    C-- 3 --&gt;D;
+    D-- 2 --&gt;E;
+    D-- 1 --&gt;F;
+    D-- 1 --&gt;G;
+    E-- 7 --&gt;F;
+    F-- 2 --&gt;I; 
+    G-- 4 --&gt;H;
+    H-- 2 --&gt;I;
         </div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
@@ -1616,11 +1636,12 @@ We can augment either BFS or DFS when we first discover a new vertex, color it o
 <span class="k">def</span> <span class="nf">find_shortest_path</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
     <span class="n">dist</span> <span class="o">=</span> <span class="p">{</span><span class="n">start</span><span class="p">:</span> <span class="p">[</span><span class="n">start</span><span class="p">]}</span>
     <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
-    
+
     <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
         <span class="n">node</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
-        
-        <span class="k">for</span> <span class="n">neighbour</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="p">[]):</span>
+
+        <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="p">[]):</span>
+            <span class="n">neighbour</span><span class="p">,</span> <span class="n">weight</span> <span class="o">=</span> <span class="n">edge</span>
             <span class="k">if</span> <span class="n">neighbour</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dist</span><span class="p">:</span>
                 <span class="n">dist</span><span class="p">[</span><span class="n">neighbour</span><span class="p">]</span> <span class="o">=</span> <span class="n">dist</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">neighbour</span><span class="p">]</span>
                 <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbour</span><span class="p">)</span>
@@ -1628,19 +1649,23 @@ We can augment either BFS or DFS when we first discover a new vertex, color it o
     <span class="k">return</span> <span class="n">dist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
 
 
-<span class="n">graph</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">],</span>
-         <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">],</span>
-         <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;D&#39;</span><span class="p">],</span>
-         <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">],</span>
-         <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;F&#39;</span><span class="p">],</span>
-         <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]}</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)],</span>
+    <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)],</span>
+    <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)],</span>
+    <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)],</span>
+    <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">)],</span>
+    <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)],</span>
+    <span class="s1">&#39;G&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)],</span>
+    <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)],</span>
+<span class="p">}</span>
 
-<span class="n">find_shortest_path</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">)</span>
+<span class="n">find_shortest_path</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;A&#39;, &#39;B&#39;, &#39;D&#39;, &#39;E&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;A&#39;, &#39;B&#39;, &#39;D&#39;, &#39;F&#39;, &#39;I&#39;]
 </pre></div>
 </div>
 </div>
@@ -1666,7 +1691,7 @@ We can augment either BFS or DFS when we first discover a new vertex, color it o
         <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
         <span class="n">output</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">distance</span>
 
-        <span class="k">for</span> <span class="n">neighbour</span><span class="p">,</span> <span class="n">neighbour_distance</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">node</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">neighbour</span><span class="p">,</span> <span class="n">neighbour_distance</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="p">[]):</span>
             <span class="k">if</span> <span class="n">neighbour</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
                 <span class="n">heappush</span><span class="p">(</span><span class="n">priority_queue</span><span class="p">,</span> <span class="p">(</span><span class="n">distance</span> <span class="o">+</span>
                          <span class="n">neighbour_distance</span><span class="p">,</span> <span class="n">neighbour</span><span class="p">))</span>
@@ -1674,14 +1699,22 @@ We can augment either BFS or DFS when we first discover a new vertex, color it o
     <span class="k">return</span> <span class="n">output</span>
 
 
-<span class="n">graph</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">]],</span> <span class="mi">1</span><span class="p">:</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]],</span>
-         <span class="mi">2</span><span class="p">:</span> <span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">14</span><span class="p">]],</span> <span class="mi">3</span><span class="p">:</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]],</span> <span class="mi">4</span><span class="p">:</span> <span class="p">[],</span> <span class="mi">5</span><span class="p">:</span> <span class="p">[]}</span>
-<span class="n">dijkstras</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">graph</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)],</span>
+    <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)],</span>
+    <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)],</span>
+    <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)],</span>
+    <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">)],</span>
+    <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)],</span>
+    <span class="s1">&#39;G&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)],</span>
+    <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)],</span>
+<span class="p">}</span>
+<span class="n">dijkstras</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0, 1: 7, 2: 13, 3: 27, 4: 10, 5: -1}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: 0, &#39;B&#39;: 4, &#39;C&#39;: 2, &#39;D&#39;: 5, &#39;E&#39;: 7, &#39;F&#39;: 6, &#39;G&#39;: 6, &#39;H&#39;: 10, &#39;I&#39;: 8}
 </pre></div>
 </div>
 </div>
@@ -1741,11 +1774,11 @@ We can augment either BFS or DFS when we first discover a new vertex, color it o
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="hash-table.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="union-find.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Hash Table</p>
+            <p class="prev-next-title">Union-Find</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../algorithms/intro.html" title="next page">
