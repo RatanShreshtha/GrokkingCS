@@ -5,6 +5,7 @@ chapters:
   sections:
   - file: basic-programming/python_101
 - file: mathematics/intro
+  sections:
   - file: mathematics/number-theory
   - file: mathematics/algebra
   - file: mathematics/geometry
