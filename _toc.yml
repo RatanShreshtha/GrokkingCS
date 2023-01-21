@@ -5,6 +5,12 @@ chapters:
   sections:
   - file: basic-programming/python_101
 - file: mathematics/intro
+  - file: mathematics/number-theory
+  - file: mathematics/algebra
+  - file: mathematics/geometry
+  - file: mathematics/combinatorics
+  - file: mathematics/probability
+  - file: mathematics/linerar-algebra
 - file: data-structures/intro
   sections:
   - file: data-structures/stack
