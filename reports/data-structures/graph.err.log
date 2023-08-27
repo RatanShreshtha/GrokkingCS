@@ -1,0 +1,51 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.11.4/x64/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+def find_shortest_path(graph, start, end):
+    dist = {start: [start]}
+    queue = deque(start)
+    while queue:
+        node = queue.popleft()
+        for neighbor in graph.get(node, []):
+            if neighbor not in dist:
+                dist[neighbor] = dist[node] + [neighbor]
+                queue.append(neighbor)
+    return dist.get(end)
+
+find_shortest_path(graph, 1, 5)
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[3], line 12[0m
+[1;32m      9[0m                 queue[38;5;241m.[39mappend(neighbor)
+[1;32m     10[0m     [38;5;28;01mreturn[39;00m dist[38;5;241m.[39mget(end)
+[0;32m---> 12[0m [43mfind_shortest_path[49m[43m([49m[43mgraph[49m[43m,[49m[43m [49m[38;5;241;43m1[39;49m[43m,[49m[43m [49m[38;5;241;43m5[39;49m[43m)[49m
+
+Cell [0;32mIn[3], line 3[0m, in [0;36mfind_shortest_path[0;34m(graph, start, end)[0m
+[1;32m      1[0m [38;5;28;01mdef[39;00m [38;5;21mfind_shortest_path[39m(graph, start, end):
+[1;32m      2[0m     dist [38;5;241m=[39m {start: [start]}
+[0;32m----> 3[0m     queue [38;5;241m=[39m [43mdeque[49m[43m([49m[43mstart[49m[43m)[49m
+[1;32m      4[0m     [38;5;28;01mwhile[39;00m queue:
+[1;32m      5[0m         node [38;5;241m=[39m queue[38;5;241m.[39mpopleft()
+
+[0;31mTypeError[0m: 'int' object is not iterable
+

@@ -1,49 +1,60 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Trees &#8212; GrokkingCS</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -51,63 +62,95 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'data-structures/tree';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Heap" href="heap.html" />
     <link rel="prev" title="Lists" href="list.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">GrokkingCS</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -117,654 +160,343 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../basic-programming/intro.html">
-   Basic Programming
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../basic-programming/python_101.html">
-     Python 101
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../mathematics/intro.html">
-   Mathematics
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../mathematics/number-theory.html">
-     NumberTheory
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../mathematics/algebra.html">
-     Algebra
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../mathematics/geometry.html">
-     Geometry
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../mathematics/combinatorics.html">
-     Combinatorics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../mathematics/probability.html">
-     Probability
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="intro.html">
-   Data Structures
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="stack.html">
-     Stack
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="queue.html">
-     Queue
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="deque.html">
-     Deque
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="list.html">
-     Lists
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Trees
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="heap.html">
-     Heap
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="priority-queue.html">
-     Priority Queue
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="hash-table.html">
-     Hash Table
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="union-find.html">
-     UnionFind
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="graph.html">
-     Graph
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../algorithms/intro.html">
-   Algorithms
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../algorithms/sorting-and-searching.html">
-     Searching
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../algorithms/recursion.html">
-     Recursion
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../algorithms/greedy.html">
-     Greedy Algorithms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../algorithms/dynamic.html">
-     Dynamic Programming
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../object-oriented-programming/intro.html">
-   Object Oriented Programming
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../object-oriented-programming/encapsulation.html">
-     Encapsulation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../object-oriented-programming/abstraction.html">
-     Abstraction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../object-oriented-programming/inheritance.html">
-     Inheritance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../object-oriented-programming/polymorphism.html">
-     Polymorphism
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../computer-organisation-and-architecture/intro.html">
-   Computer Organisation And Architecture
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../operating-system/intro.html">
-   Operating System
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../design-patterns/intro.html">
-   Design Patterns
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../system-design/intro.html">
-   System Design Basics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../database-design/intro.html">
-   Database Design
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../computer-networks/intro.html">
-   Computer Networks
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../cryptography/intro.html">
-   Cryptography
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../information-theory/intro.html">
-   Information Theory
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../testing/intro.html">
-   Testing
-  </a>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basic-programming/intro.html">Basic Programming</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basic-programming/python_101.html">Python 101</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mathematics/intro.html">Mathematics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mathematics/number-theory.html">NumberTheory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mathematics/algebra.html">Algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mathematics/geometry.html">Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mathematics/combinatorics.html">Combinatorics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mathematics/probability.html">Probability</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Data Structures</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="stack.html">Stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queue.html">Queue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deque.html">Deque</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list.html">Lists</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Trees</a></li>
+<li class="toctree-l2"><a class="reference internal" href="heap.html">Heap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="priority-queue.html">Priority Queue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hash-table.html">Hash Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="union-find.html">UnionFind</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graph.html">Graph</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../algorithms/intro.html">Algorithms</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../algorithms/sorting-and-searching.html">Searching</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../algorithms/recursion.html">Recursion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithms/greedy.html">Greedy Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../algorithms/dynamic.html">Dynamic Programming</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../object-oriented-programming/intro.html">Object Oriented Programming</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../object-oriented-programming/encapsulation.html">Encapsulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../object-oriented-programming/abstraction.html">Abstraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../object-oriented-programming/inheritance.html">Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../object-oriented-programming/polymorphism.html">Polymorphism</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../computer-organisation-and-architecture/intro.html">Computer Organisation And Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operating-system/intro.html">Operating System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design-patterns/intro.html">Design Patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system-design/intro.html">System Design Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database-design/intro.html">Database Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../computer-networks/intro.html">Computer Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cryptography/intro.html">Cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../information-theory/intro.html">Information Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing/intro.html">Testing</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/RatanShreshtha/GrokkingCS/main?urlpath=lab/tree/src/data-structures/tree.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/RatanShreshtha/GrokkingCS/main?urlpath=lab/tree/src/data-structures/tree.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-      <li>
-        <a href="https://colab.research.google.com/github/RatanShreshtha/GrokkingCS/blob/main/src/data-structures/tree.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/RatanShreshtha/GrokkingCS/blob/main/src/data-structures/tree.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
 <button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-play"></i>
   </span>
-<span class="headerbtn__text-container">Live Code</span>
+<span class="btn__text-container">Live Code</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/RatanShreshtha/GrokkingCS" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/RatanShreshtha/GrokkingCS/issues/new?title=Issue%20on%20page%20%2Fdata-structures/tree.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/data-structures/tree.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/RatanShreshtha/GrokkingCS"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/RatanShreshtha/GrokkingCS/issues/new?title=Issue%20on%20page%20%2Fdata-structures/tree.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/data-structures/tree.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prperties-of-trees">
-   Prperties of trees
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tree-traversals">
-   Tree Traversals
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#practice-problems">
-   Practice Problems
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#write-a-python-function-to-create-a-parse-tree-for-mathemetical-expressions-like-3-2-12-4">
-     Write a Python function to create a parse tree for mathemetical expressions like
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       ((3
-      </span>
-      <span class="pre">
-       *
-      </span>
-      <span class="pre">
-       2)
-      </span>
-      <span class="pre">
-       +
-      </span>
-      <span class="pre">
-       (12
-      </span>
-      <span class="pre">
-       /
-      </span>
-      <span class="pre">
-       4))
-      </span>
-     </code>
-     .
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#binary-search-tree">
-   Binary Search Tree
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#binary-search-tree-abstract-data-type">
-     Binary Search Tree Abstract Data Type
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#binary-search-tree-operations">
-       Binary Search Tree Operations
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#search-tree-analysis">
-     Search Tree Analysis
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#avl-tree">
-   AVL Tree
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Trees</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prperties-of-trees">
-   Prperties of trees
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tree-traversals">
-   Tree Traversals
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#practice-problems">
-   Practice Problems
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#write-a-python-function-to-create-a-parse-tree-for-mathemetical-expressions-like-3-2-12-4">
-     Write a Python function to create a parse tree for mathemetical expressions like
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       ((3
-      </span>
-      <span class="pre">
-       *
-      </span>
-      <span class="pre">
-       2)
-      </span>
-      <span class="pre">
-       +
-      </span>
-      <span class="pre">
-       (12
-      </span>
-      <span class="pre">
-       /
-      </span>
-      <span class="pre">
-       4))
-      </span>
-     </code>
-     .
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#binary-search-tree">
-   Binary Search Tree
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#binary-search-tree-abstract-data-type">
-     Binary Search Tree Abstract Data Type
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#binary-search-tree-operations">
-       Binary Search Tree Operations
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#search-tree-analysis">
-     Search Tree Analysis
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#avl-tree">
-   AVL Tree
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Trees</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prperties-of-trees">Prperties of trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tree-traversals">Tree Traversals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">Practice Problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-a-python-function-to-create-a-parse-tree-for-mathemetical-expressions-like-3-2-12-4">Write a Python function to create a parse tree for mathemetical expressions like <code class="docutils literal notranslate"><span class="pre">((3</span> <span class="pre">*</span> <span class="pre">2)</span> <span class="pre">+</span> <span class="pre">(12</span> <span class="pre">/</span> <span class="pre">4))</span></code>.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-search-tree">Binary Search Tree</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-search-tree-abstract-data-type">Binary Search Tree Abstract Data Type</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-search-tree-operations">Binary Search Tree Operations</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-tree-analysis">Search Tree Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avl-tree">AVL Tree</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="trees">
-<h1>Trees<a class="headerlink" href="#trees" title="Permalink to this headline">#</a></h1>
+<h1>Trees<a class="headerlink" href="#trees" title="Permalink to this heading">#</a></h1>
 <p>Tree data structure has a <strong>root</strong>, <strong>branches</strong>, and <strong>leaves</strong>. The difference between a tree in nature and a tree in computer science is that a tree data structure has its <em>root at the top</em> and its <em>leaves on the bottom</em>.</p>
 <p>Trees are used in many areas of computer science, including operating systems, graphics, database systems, and computer networking. Tree data structures have many things in common with their botanical cousins.</p>
 <div class="mermaid">
@@ -825,14 +557,14 @@ title="Print to PDF"
     style e5 fill:#9eea00
     style f1 fill:#9eea00
         </div><p><strong>Example</strong></p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Taxonomic classification tree from biology.</p></li>
 <li><p>Computer file system for storing data. In a file system, directories, or folders, are structured as a tree.</p></li>
 <li><p>A web page written in HTML is a tree.</p></li>
 </ol>
 <section id="prperties-of-trees">
-<h2>Prperties of trees<a class="headerlink" href="#prperties-of-trees" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
+<h2>Prperties of trees<a class="headerlink" href="#prperties-of-trees" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
 <li><p>First property of trees is that trees are <strong>hierarchical</strong>, trees are structured in layers with the <em>more general things near the top and the more specific things near the bottom</em>.</p></li>
 <li><p>Second property of trees is that all of the <em>children of one node are independent of the children of another node</em>.</p></li>
 <li><p>Third property is that <em>each leaf node is unique</em>.</p></li>
@@ -840,7 +572,7 @@ title="Print to PDF"
 <p>If each node in the tree has a maximum of two children, we say that the tree is a <strong>binary tree.</strong></p>
 </section>
 <section id="tree-traversals">
-<h2>Tree Traversals<a class="headerlink" href="#tree-traversals" title="Permalink to this headline">#</a></h2>
+<h2>Tree Traversals<a class="headerlink" href="#tree-traversals" title="Permalink to this heading">#</a></h2>
 <p>Visitation of the nodes of a tree is called a <strong>“traversal”</strong>. The three traversals we will look at are called preorder, inorder, and postorder.</p>
 <ul class="simple">
 <li><p><strong>Pre-Order</strong>: visit the root node first, then recursively do preorder traversal of the left subtree, followed by recursive preorder traversal of the right subtree.</p></li>
@@ -976,9 +708,9 @@ b d e c f g a
 </div>
 </section>
 <section id="practice-problems">
-<h2>Practice Problems<a class="headerlink" href="#practice-problems" title="Permalink to this headline">#</a></h2>
+<h2>Practice Problems<a class="headerlink" href="#practice-problems" title="Permalink to this heading">#</a></h2>
 <section id="write-a-python-function-to-create-a-parse-tree-for-mathemetical-expressions-like-3-2-12-4">
-<h3>Write a Python function to create a parse tree for mathemetical expressions like <code class="docutils literal notranslate"><span class="pre">((3</span> <span class="pre">*</span> <span class="pre">2)</span> <span class="pre">+</span> <span class="pre">(12</span> <span class="pre">/</span> <span class="pre">4))</span></code>.<a class="headerlink" href="#write-a-python-function-to-create-a-parse-tree-for-mathemetical-expressions-like-3-2-12-4" title="Permalink to this headline">#</a></h3>
+<h3>Write a Python function to create a parse tree for mathemetical expressions like <code class="docutils literal notranslate"><span class="pre">((3</span> <span class="pre">*</span> <span class="pre">2)</span> <span class="pre">+</span> <span class="pre">(12</span> <span class="pre">/</span> <span class="pre">4))</span></code>.<a class="headerlink" href="#write-a-python-function-to-create-a-parse-tree-for-mathemetical-expressions-like-3-2-12-4" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build_parse_tree</span><span class="p">(</span><span class="n">exp</span><span class="p">):</span>
@@ -990,7 +722,7 @@ b d e c f g a
 </section>
 </section>
 <section id="binary-search-tree">
-<h2>Binary Search Tree<a class="headerlink" href="#binary-search-tree" title="Permalink to this headline">#</a></h2>
+<h2>Binary Search Tree<a class="headerlink" href="#binary-search-tree" title="Permalink to this heading">#</a></h2>
 <p>Binary search trees is another way to map from a key to a value. In this case we are not interested in the exact placement of items in the tree, but we are interested in using the binary tree structure to provide for efficient searching.</p>
 <p>Binary Search Tree is a node-based binary tree data structure which has the following properties:</p>
 <ul class="simple">
@@ -999,10 +731,10 @@ b d e c f g a
 <li><p>The left and right subtree each must also be a binary search tree.</p></li>
 </ul>
 <section id="binary-search-tree-abstract-data-type">
-<h3>Binary Search Tree Abstract Data Type<a class="headerlink" href="#binary-search-tree-abstract-data-type" title="Permalink to this headline">#</a></h3>
+<h3>Binary Search Tree Abstract Data Type<a class="headerlink" href="#binary-search-tree-abstract-data-type" title="Permalink to this heading">#</a></h3>
 <p>The Binary Search Tree abstract data type is defined by the following structure and operations.</p>
 <section id="binary-search-tree-operations">
-<h4>Binary Search Tree Operations<a class="headerlink" href="#binary-search-tree-operations" title="Permalink to this headline">#</a></h4>
+<h4>Binary Search Tree Operations<a class="headerlink" href="#binary-search-tree-operations" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">BinarySearchTree()</span></code> Create a new, empty binary search tree.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">put(key,</span> <span class="pre">val)</span></code> Add a new key-value pair to the binary search tree. If the key is already in the binary search tree then replace the old value with the new value.</p></li>
@@ -1145,13 +877,13 @@ r
 </section>
 </section>
 <section id="search-tree-analysis">
-<h3>Search Tree Analysis<a class="headerlink" href="#search-tree-analysis" title="Permalink to this headline">#</a></h3>
+<h3>Search Tree Analysis<a class="headerlink" href="#search-tree-analysis" title="Permalink to this heading">#</a></h3>
 <p>A perfectly balanced tree has the same number of nodes in the left subtree as the right subtree. In a balanced binary tree, the worst-case performance of put, get is <code class="docutils literal notranslate"><span class="pre">O(logn)</span></code>, where n is the number of nodes in the tree. So <code class="docutils literal notranslate"><span class="pre">log</span> <span class="pre">n</span></code> gives us the height of the tree, and represents the maximum number of comparisons that put will need to do as it searches for the proper place to insert a new node.</p>
 <p>Performance of the binary search tree can degrade to <code class="docutils literal notranslate"><span class="pre">O(n)</span></code> for operations like get and put when the tree becomes unbalanced.</p>
 </section>
 </section>
 <section id="avl-tree">
-<h2>AVL Tree<a class="headerlink" href="#avl-tree" title="Permalink to this headline">#</a></h2>
+<h2>AVL Tree<a class="headerlink" href="#avl-tree" title="Permalink to this heading">#</a></h2>
 <p>AVL tree and is named for its inventors: G.M. Adelson-Velskii and E.M. Landis. <strong>AVL Tree</strong> is a special kind of binary search tree that automatically makes sure that the tree remains <strong>balanced</strong> at all times. An AVL tree implements the Map abstract data type just like a regular binary search tree, the only difference is in how the tree performs.</p>
 <p>To implement our AVL tree we need to keep track of a <strong>balance factor</strong> for each node in the tree, <strong>balance factor</strong> for each node in the tree is calculated by looking at the heights of the left and right subtrees. More formally, we define the balance factor for a node as the difference between the height of the left subtree and the height of the right subtree.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>balanceFactor = height(leftSubTree) − height(rightSubTree)
@@ -1182,50 +914,119 @@ r
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="list.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lists</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="list.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lists</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="heap.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="heap.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Heap</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Ratan Kulshreshtha<br/>
-  
-      &copy; Copyright 2021.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prperties-of-trees">Prperties of trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tree-traversals">Tree Traversals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems">Practice Problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-a-python-function-to-create-a-parse-tree-for-mathemetical-expressions-like-3-2-12-4">Write a Python function to create a parse tree for mathemetical expressions like <code class="docutils literal notranslate"><span class="pre">((3</span> <span class="pre">*</span> <span class="pre">2)</span> <span class="pre">+</span> <span class="pre">(12</span> <span class="pre">/</span> <span class="pre">4))</span></code>.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-search-tree">Binary Search Tree</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-search-tree-abstract-data-type">Binary Search Tree Abstract Data Type</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-search-tree-operations">Binary Search Tree Operations</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-tree-analysis">Search Tree Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avl-tree">AVL Tree</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ratan Kulshreshtha
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2021.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
