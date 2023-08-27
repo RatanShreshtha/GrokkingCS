@@ -39,6 +39,10 @@ chapters:
 - file: computer-organisation-and-architecture/intro
 - file: operating-system/intro
 - file: design-patterns/intro
+  sections:
+    - file: design-patterns/creational
+    - file: design-patterns/structural
+    - file: design-patterns/behavioral
 - file: system-design/intro
 - file: database-design/intro
 - file: computer-networks/intro
