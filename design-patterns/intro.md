@@ -22,8 +22,15 @@ In addition, all patterns can be categorized by their intent, or purpose. This b
 ### Creational patterns
 These patterns provide various object creation mechanisms, which increase flexibility and reuse of existing code.
 
-### Structural patterns 
+### Structural patterns
 These patterns explain how to assemble objects and classes into larger structures while keeping these structures flexible and efficient.
 
 ### Behavioral patterns
 These patterns are concerned with algorithms and the assignment of responsibilities between objects.
+
+## Bonus Material
+
+- **Classic Design Patterns: Where Are They Now - Brandon Rhodes - code::dive 2022**
+    - By Raymond Hettinger
+    
+    [![Classic Design Patterns: Where Are They Now](http://img.youtube.com/vi/pGq7Cr2ekVM/0.jpg)](https://www.youtube.com/watch?v=pGq7Cr2ekVM "Classic Design Patterns: Where Are They Now - Brandon Rhodes - code::dive 2022")
