@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Trees &#8212; GrokkingCS</title>
   
@@ -19,49 +18,54 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'data-structures/tree';</script>
@@ -78,7 +82,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -113,11 +125,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -132,9 +147,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../index.html">
+  
   
   
   
@@ -144,12 +161,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="GrokkingCS - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="GrokkingCS - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -434,20 +462,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -498,10 +528,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="trees">
-<h1>Trees<a class="headerlink" href="#trees" title="Permalink to this heading">#</a></h1>
+<h1>Trees<a class="headerlink" href="#trees" title="Link to this heading">#</a></h1>
 <p>Tree data structure has a <strong>root</strong>, <strong>branches</strong>, and <strong>leaves</strong>. The difference between a tree in nature and a tree in computer science is that a tree data structure has its <em>root at the top</em> and its <em>leaves on the bottom</em>.</p>
 <p>Trees are used in many areas of computer science, including operating systems, graphics, database systems, and computer networking. Tree data structures have many things in common with their botanical cousins.</p>
 <div class="mermaid">
@@ -568,7 +598,7 @@ document.write(`
 <li><p>A web page written in HTML is a tree.</p></li>
 </ol>
 <section id="prperties-of-trees">
-<h2>Prperties of trees<a class="headerlink" href="#prperties-of-trees" title="Permalink to this heading">#</a></h2>
+<h2>Prperties of trees<a class="headerlink" href="#prperties-of-trees" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>First property of trees is that trees are <strong>hierarchical</strong>, trees are structured in layers with the <em>more general things near the top and the more specific things near the bottom</em>.</p></li>
 <li><p>Second property of trees is that all of the <em>children of one node are independent of the children of another node</em>.</p></li>
@@ -577,7 +607,7 @@ document.write(`
 <p>If each node in the tree has a maximum of two children, we say that the tree is a <strong>binary tree.</strong></p>
 </section>
 <section id="tree-traversals">
-<h2>Tree Traversals<a class="headerlink" href="#tree-traversals" title="Permalink to this heading">#</a></h2>
+<h2>Tree Traversals<a class="headerlink" href="#tree-traversals" title="Link to this heading">#</a></h2>
 <p>Visitation of the nodes of a tree is called a <strong>“traversal”</strong>. The three traversals we will look at are called preorder, inorder, and postorder.</p>
 <ul class="simple">
 <li><p><strong>Pre-Order</strong>: visit the root node first, then recursively do preorder traversal of the left subtree, followed by recursive preorder traversal of the right subtree.</p></li>
@@ -713,9 +743,9 @@ b d e c f g a
 </div>
 </section>
 <section id="practice-problems">
-<h2>Practice Problems<a class="headerlink" href="#practice-problems" title="Permalink to this heading">#</a></h2>
+<h2>Practice Problems<a class="headerlink" href="#practice-problems" title="Link to this heading">#</a></h2>
 <section id="write-a-python-function-to-create-a-parse-tree-for-mathemetical-expressions-like-3-2-12-4">
-<h3>Write a Python function to create a parse tree for mathemetical expressions like <code class="docutils literal notranslate"><span class="pre">((3</span> <span class="pre">*</span> <span class="pre">2)</span> <span class="pre">+</span> <span class="pre">(12</span> <span class="pre">/</span> <span class="pre">4))</span></code>.<a class="headerlink" href="#write-a-python-function-to-create-a-parse-tree-for-mathemetical-expressions-like-3-2-12-4" title="Permalink to this heading">#</a></h3>
+<h3>Write a Python function to create a parse tree for mathemetical expressions like <code class="docutils literal notranslate"><span class="pre">((3</span> <span class="pre">*</span> <span class="pre">2)</span> <span class="pre">+</span> <span class="pre">(12</span> <span class="pre">/</span> <span class="pre">4))</span></code>.<a class="headerlink" href="#write-a-python-function-to-create-a-parse-tree-for-mathemetical-expressions-like-3-2-12-4" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build_parse_tree</span><span class="p">(</span><span class="n">exp</span><span class="p">):</span>
@@ -727,7 +757,7 @@ b d e c f g a
 </section>
 </section>
 <section id="binary-search-tree">
-<h2>Binary Search Tree<a class="headerlink" href="#binary-search-tree" title="Permalink to this heading">#</a></h2>
+<h2>Binary Search Tree<a class="headerlink" href="#binary-search-tree" title="Link to this heading">#</a></h2>
 <p>Binary search trees is another way to map from a key to a value. In this case we are not interested in the exact placement of items in the tree, but we are interested in using the binary tree structure to provide for efficient searching.</p>
 <p>Binary Search Tree is a node-based binary tree data structure which has the following properties:</p>
 <ul class="simple">
@@ -736,10 +766,10 @@ b d e c f g a
 <li><p>The left and right subtree each must also be a binary search tree.</p></li>
 </ul>
 <section id="binary-search-tree-abstract-data-type">
-<h3>Binary Search Tree Abstract Data Type<a class="headerlink" href="#binary-search-tree-abstract-data-type" title="Permalink to this heading">#</a></h3>
+<h3>Binary Search Tree Abstract Data Type<a class="headerlink" href="#binary-search-tree-abstract-data-type" title="Link to this heading">#</a></h3>
 <p>The Binary Search Tree abstract data type is defined by the following structure and operations.</p>
 <section id="binary-search-tree-operations">
-<h4>Binary Search Tree Operations<a class="headerlink" href="#binary-search-tree-operations" title="Permalink to this heading">#</a></h4>
+<h4>Binary Search Tree Operations<a class="headerlink" href="#binary-search-tree-operations" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">BinarySearchTree()</span></code> Create a new, empty binary search tree.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">put(key,</span> <span class="pre">val)</span></code> Add a new key-value pair to the binary search tree. If the key is already in the binary search tree then replace the old value with the new value.</p></li>
@@ -882,21 +912,34 @@ r
 </section>
 </section>
 <section id="search-tree-analysis">
-<h3>Search Tree Analysis<a class="headerlink" href="#search-tree-analysis" title="Permalink to this heading">#</a></h3>
+<h3>Search Tree Analysis<a class="headerlink" href="#search-tree-analysis" title="Link to this heading">#</a></h3>
 <p>A perfectly balanced tree has the same number of nodes in the left subtree as the right subtree. In a balanced binary tree, the worst-case performance of put, get is <code class="docutils literal notranslate"><span class="pre">O(logn)</span></code>, where n is the number of nodes in the tree. So <code class="docutils literal notranslate"><span class="pre">log</span> <span class="pre">n</span></code> gives us the height of the tree, and represents the maximum number of comparisons that put will need to do as it searches for the proper place to insert a new node.</p>
 <p>Performance of the binary search tree can degrade to <code class="docutils literal notranslate"><span class="pre">O(n)</span></code> for operations like get and put when the tree becomes unbalanced.</p>
 </section>
 </section>
 <section id="avl-tree">
-<h2>AVL Tree<a class="headerlink" href="#avl-tree" title="Permalink to this heading">#</a></h2>
+<h2>AVL Tree<a class="headerlink" href="#avl-tree" title="Link to this heading">#</a></h2>
 <p>AVL tree and is named for its inventors: G.M. Adelson-Velskii and E.M. Landis. <strong>AVL Tree</strong> is a special kind of binary search tree that automatically makes sure that the tree remains <strong>balanced</strong> at all times. An AVL tree implements the Map abstract data type just like a regular binary search tree, the only difference is in how the tree performs.</p>
 <p>To implement our AVL tree we need to keep track of a <strong>balance factor</strong> for each node in the tree, <strong>balance factor</strong> for each node in the tree is calculated by looking at the heights of the left and right subtrees. More formally, we define the balance factor for a node as the difference between the height of the left subtree and the height of the right subtree.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>balanceFactor = height(leftSubTree) − height(rightSubTree)
 </pre></div>
 </div>
 <p>Using the definition for balance factor given above we say that a subtree is left-heavy if the balance factor is greater than zero. If the balance factor is less than zero then the subtree is right heavy. If the balance factor is zero then the tree is perfectly in balance. A tree is considered to be in balanced if the balance factor is -1, 0, or 1. Once the balance factor of a node in a tree is outside this range we will need to have a procedure to bring the tree back into balance.</p>
-<p><img alt="unbalanced binary tree" src="https://runestone.academy/runestone/books/published/pythonds/_images/unbalanced.png" /></p>
-</section>
+<div class="mermaid">
+            flowchart TB;
+    a((4))
+    b((0))
+    c((5))
+    d((7))
+    e((2))
+    f((1))
+
+    a --&gt; b
+    a --&gt; c
+    c --&gt; d
+    c --&gt; e
+    e --&gt; f
+        </div></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -924,11 +967,10 @@ r
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="list.html"
@@ -948,10 +990,7 @@ r
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -959,6 +998,7 @@ r
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1002,6 +1042,7 @@ By Ratan Kulshreshtha
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2021.
@@ -1028,8 +1069,8 @@ By Ratan Kulshreshtha
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

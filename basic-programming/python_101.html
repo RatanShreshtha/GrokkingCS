@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Python 101 &#8212; GrokkingCS</title>
   
@@ -19,49 +18,54 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'basic-programming/python_101';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -76,7 +80,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -111,11 +123,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -130,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../index.html">
+  
   
   
   
@@ -142,12 +159,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="GrokkingCS - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="GrokkingCS - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -432,20 +460,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -510,15 +540,15 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python-101">
-<h1>Python 101<a class="headerlink" href="#python-101" title="Permalink to this heading">#</a></h1>
+<h1>Python 101<a class="headerlink" href="#python-101" title="Link to this heading">#</a></h1>
 <p>This is an optional notebook to get you up to speed with Python in case you are new to Python or need a refresher. The material here is a crash course in Python; I highly recommend the <a class="reference external" href="https://docs.python.org/3/tutorial/">official Python tutorial</a> for a deeper dive. Consider reading <a class="reference external" href="https://docs.python.org/3/tutorial/appetite.html">this page</a> in the Python docs for background on Python and bookmarking the <a class="reference external" href="https://docs.python.org/3/glossary.html#glossary">glossary</a>.</p>
 <section id="basic-data-types">
-<h2>Basic data types<a class="headerlink" href="#basic-data-types" title="Permalink to this heading">#</a></h2>
+<h2>Basic data types<a class="headerlink" href="#basic-data-types" title="Link to this heading">#</a></h2>
 <section id="numbers">
-<h3>Numbers<a class="headerlink" href="#numbers" title="Permalink to this heading">#</a></h3>
+<h3>Numbers<a class="headerlink" href="#numbers" title="Link to this heading">#</a></h3>
 <p>Numbers in Python can be represented as integers (e.g. <code class="docutils literal notranslate"><span class="pre">5</span></code>) or floats (e.g. <code class="docutils literal notranslate"><span class="pre">5.0</span></code>). We can perform operations on them:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -546,7 +576,7 @@ document.write(`
 </div>
 </section>
 <section id="booleans">
-<h3>Booleans<a class="headerlink" href="#booleans" title="Permalink to this heading">#</a></h3>
+<h3>Booleans<a class="headerlink" href="#booleans" title="Link to this heading">#</a></h3>
 <p>We can check for equality giving us a Boolean:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -611,7 +641,7 @@ document.write(`
 </div>
 </section>
 <section id="strings">
-<h3>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">#</a></h3>
+<h3>Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h3>
 <p>Using strings, we can handle text in Python. These values must be surrounded in quotes — single (<code class="docutils literal notranslate"><span class="pre">'...'</span></code>) is the standard, but double (<code class="docutils literal notranslate"><span class="pre">&quot;...&quot;</span></code>) works as well:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -680,7 +710,7 @@ document.write(`
 </section>
 </section>
 <section id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h2>
+<h2>Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
 <p>Notice that just typing text causes an error. Errors in Python attempt to clue us in to what went wrong with our code. In this case, we have a <code class="docutils literal notranslate"><span class="pre">NameError</span></code> exception which tells us that <code class="docutils literal notranslate"><span class="pre">'hello'</span></code> is not defined. This means that <a class="reference external" href="https://docs.python.org/3/tutorial/interpreter.html">the Python interpreter</a> looked for a <strong>variable</strong> named <code class="docutils literal notranslate"><span class="pre">hello</span></code>, but it didn’t find one.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -762,9 +792,9 @@ document.write(`
 </div>
 </section>
 <section id="collections-of-items">
-<h2>Collections of Items<a class="headerlink" href="#collections-of-items" title="Permalink to this heading">#</a></h2>
+<h2>Collections of Items<a class="headerlink" href="#collections-of-items" title="Link to this heading">#</a></h2>
 <section id="lists">
-<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this heading">#</a></h3>
+<h3>Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h3>
 <p>We can store a collection of items in a list:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -899,7 +929,7 @@ document.write(`
 </div>
 </section>
 <section id="tuples">
-<h3>Tuples<a class="headerlink" href="#tuples" title="Permalink to this heading">#</a></h3>
+<h3>Tuples<a class="headerlink" href="#tuples" title="Link to this heading">#</a></h3>
 <p>Tuples are similar to lists; however, they can’t be modified after creation i.e. they are <strong>immutable</strong>. Instead of square brackets, we use parenthesis to create tuples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -946,7 +976,7 @@ document.write(`
 </div>
 </section>
 <section id="dictionaries">
-<h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this heading">#</a></h3>
+<h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">#</a></h3>
 <p>We can store mappings of key-value pairs using dictionaries:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1019,7 +1049,7 @@ document.write(`
 </div>
 </section>
 <section id="sets">
-<h3>Sets<a class="headerlink" href="#sets" title="Permalink to this heading">#</a></h3>
+<h3>Sets<a class="headerlink" href="#sets" title="Link to this heading">#</a></h3>
 <p>A set is a collection of unique items; a common use is to remove duplicates from a list. These are written with curly braces also, but notice there is no key-value mapping:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1076,11 +1106,11 @@ document.write(`
 </section>
 </section>
 <section id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
 <p>We can define functions to package up our code for reuse. We have already seen some functions: <code class="docutils literal notranslate"><span class="pre">len()</span></code>, <code class="docutils literal notranslate"><span class="pre">type()</span></code>, and <code class="docutils literal notranslate"><span class="pre">print()</span></code>. They are all functions that take <strong>arguments</strong>. Note that functions don’t need to accept arguments, in which case they are called without passing in anything (e.g. <code class="docutils literal notranslate"><span class="pre">print()</span></code> versus <code class="docutils literal notranslate"><span class="pre">print(my_string)</span></code>).</p>
 <p><em>Aside: we can also create lists, sets, dictionaries, and tuples with functions: <code class="docutils literal notranslate"><span class="pre">list()</span></code>, <code class="docutils literal notranslate"><span class="pre">set()</span></code>, <code class="docutils literal notranslate"><span class="pre">dict()</span></code>, and <code class="docutils literal notranslate"><span class="pre">tuple()</span></code></em></p>
 <section id="defining-functions">
-<h3>Defining functions<a class="headerlink" href="#defining-functions" title="Permalink to this heading">#</a></h3>
+<h3>Defining functions<a class="headerlink" href="#defining-functions" title="Link to this heading">#</a></h3>
 <p>We use the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword to define functions. Let’s create a function called <code class="docutils literal notranslate"><span class="pre">add()</span></code> with 2 parameters, <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>, which will be the names the code in the function will use to refer to the arguments we pass in when calling it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1124,7 +1154,7 @@ document.write(`
 </div>
 </section>
 <section id="return-values">
-<h3>Return values<a class="headerlink" href="#return-values" title="Permalink to this heading">#</a></h3>
+<h3>Return values<a class="headerlink" href="#return-values" title="Link to this heading">#</a></h3>
 <p>We can store the result in a variable for later:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1193,7 +1223,7 @@ document.write(`
 <p><em>Warning: make sure to use comparison operators (e.g. &gt;, &gt;=, &lt;, &lt;=, ==, !=) to compare to values other than <code class="docutils literal notranslate"><span class="pre">None</span></code>.</em></p>
 </section>
 <section id="function-arguments">
-<h3>Function arguments<a class="headerlink" href="#function-arguments" title="Permalink to this heading">#</a></h3>
+<h3>Function arguments<a class="headerlink" href="#function-arguments" title="Link to this heading">#</a></h3>
 <p><em>Note that function arguments can be anything, even other functions. We will see several examples of this in the text.</em></p>
 <p>The function we defined requires arguments. If we don’t provide them all, it will cause an error:</p>
 <div class="cell docutils container">
@@ -1259,7 +1289,7 @@ add(x, y)
 </section>
 </section>
 <section id="control-flow-statements">
-<h2>Control Flow Statements<a class="headerlink" href="#control-flow-statements" title="Permalink to this heading">#</a></h2>
+<h2>Control Flow Statements<a class="headerlink" href="#control-flow-statements" title="Link to this heading">#</a></h2>
 <p>Sometimes we want to vary the path the code takes based on some criteria. For this we have <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, and <code class="docutils literal notranslate"><span class="pre">else</span></code>. We can use <code class="docutils literal notranslate"><span class="pre">if</span></code> on its own:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1382,9 +1412,9 @@ add(x, y)
 </div>
 </section>
 <section id="loops">
-<h2>Loops<a class="headerlink" href="#loops" title="Permalink to this heading">#</a></h2>
+<h2>Loops<a class="headerlink" href="#loops" title="Link to this heading">#</a></h2>
 <section id="while-loops">
-<h3><code class="docutils literal notranslate"><span class="pre">while</span></code> loops<a class="headerlink" href="#while-loops" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">while</span></code> loops<a class="headerlink" href="#while-loops" title="Link to this heading">#</a></h3>
 <p>With <code class="docutils literal notranslate"><span class="pre">while</span></code> loops, we can keep running code until some stopping condition is met:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1426,7 +1456,7 @@ Still going... 8
 </div>
 </section>
 <section id="for-loops">
-<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> loops<a class="headerlink" href="#for-loops" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> loops<a class="headerlink" href="#for-loops" title="Link to this heading">#</a></h3>
 <p>With <code class="docutils literal notranslate"><span class="pre">for</span></code> loops, we can run our code <em>for each</em> element in a collection:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1481,7 +1511,7 @@ For meat we need to buy 0
 </section>
 </section>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
 <p>We have been working with the portion of Python that is available without importing additional functionality. The Python standard library that comes with the install of Python is broken up into several <strong>modules</strong>, but we often only need a few. We can import whatever we need: a module in the standard library, a 3rd-party library, or code that we wrote. This is done with an <code class="docutils literal notranslate"><span class="pre">import</span></code> statement:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1515,14 +1545,14 @@ For meat we need to buy 0
 <p><em>Warning: anything you import is added to the namespace, so if you create a new variable/function/etc. with the same name it will overwrite the previous value. For this reason, we have to be careful with variable names e.g. if you name something <code class="docutils literal notranslate"><span class="pre">sum</span></code>, you won’t be able to add using the <code class="docutils literal notranslate"><span class="pre">sum()</span></code> built-in function anymore. Using notebooks or an IDE will help you avoid these issues with syntax highlighting.</em></p>
 </section>
 <section id="installing-3rd-party-packages">
-<h2>Installing 3rd-party Packages<a class="headerlink" href="#installing-3rd-party-packages" title="Permalink to this heading">#</a></h2>
+<h2>Installing 3rd-party Packages<a class="headerlink" href="#installing-3rd-party-packages" title="Link to this heading">#</a></h2>
 <p><strong>NOTE: We will cover the environment setup in the text; this is for reference.</strong></p>
 <p>We can use <a class="reference external" href="https://pip.pypa.io/en/stable/reference/"><code class="docutils literal notranslate"><span class="pre">pip</span></code></a> or <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/commands.html"><code class="docutils literal notranslate"><span class="pre">conda</span></code></a> to install packages, depending on how we created our virtual environment. The text walks through the commands to create virtual environments with <code class="docutils literal notranslate"><span class="pre">venv</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span></code>. The environment <strong>MUST</strong> be activated before installing the packages for this text; otherwise, it’s possible they interfere with other projects on your machine or vice versa.</p>
 <p>To install a package, we can use <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">&lt;package_name&gt;</span></code>. Optionally, we can provide a specific version to install <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">pandas==0.23.4</span></code>. Without that specification, we will get the most stable version. When we have many packages to install (as we do for this book), we will typically use a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file: <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code>.</p>
 <p><em>Note: running <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">freeze</span> <span class="pre">&gt;</span> <span class="pre">requirements.txt</span></code> will send the list of packages installed in the activate environment and their respective versions to the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file.</em></p>
 </section>
 <section id="classes">
-<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">#</a></h2>
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
 <p><em>NOTE: We will discuss this further in the text in chapter 7. For now, it is important to be aware of the syntax in this section.</em></p>
 <p>So far we have used Python as a functional programming language, but we also have the option to use it for <strong>object-oriented programming</strong>. You can think of a <code class="docutils literal notranslate"><span class="pre">class</span></code> as a way to group similar functionality together. Let’s create a calculator class which can handle mathematical operations for us. For this, we use the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword and define <strong>methods</strong> for taking actions on the calculator. These methods are functions that take <code class="docutils literal notranslate"><span class="pre">self</span></code> as the first argument. When calling them, we don’t pass in anything for that argument (example after this):</p>
 <div class="cell docutils container">
@@ -1697,11 +1727,10 @@ add(x, y) method of __main__.Calculator instance
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="intro.html"
@@ -1721,10 +1750,7 @@ add(x, y) method of __main__.Calculator instance
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1732,6 +1758,7 @@ add(x, y) method of __main__.Calculator instance
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1789,6 +1816,7 @@ By Ratan Kulshreshtha
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2021.
@@ -1815,8 +1843,8 @@ By Ratan Kulshreshtha
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

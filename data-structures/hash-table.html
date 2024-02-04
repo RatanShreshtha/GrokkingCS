@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Hash Table &#8212; GrokkingCS</title>
   
@@ -19,49 +18,54 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'data-structures/hash-table';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -76,7 +80,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -111,11 +123,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -130,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../index.html">
+  
   
   
   
@@ -142,12 +159,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="GrokkingCS - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="GrokkingCS - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -432,20 +460,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -489,15 +519,15 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="hash-table">
-<h1>Hash Table<a class="headerlink" href="#hash-table" title="Permalink to this heading">#</a></h1>
+<h1>Hash Table<a class="headerlink" href="#hash-table" title="Link to this heading">#</a></h1>
 <p>A hash table is a collection of items which are stored in such a way as to make it easy to find them later. In order to do this, we will need to know even more about where the items might be when we go to look for them in the collection. If every item is where it should be, then the search can use a single comparison to discover the presence of an item. Each position of the hash table, often called a slot, can hold an item and is named by an integer value starting at 0.</p>
 <p>The mapping between an item and the slot where that item belongs in the hash table is called the <strong>hash function</strong>. The hash function will take any item in the collection and return an integer in the range of slot names, between 0 and m-1.</p>
 <p>Ratio of number of items in a hash table to size of hash table is called <strong>load factor</strong>.</p>
 <section id="hash-functions">
-<h2>Hash Functions<a class="headerlink" href="#hash-functions" title="Permalink to this heading">#</a></h2>
+<h2>Hash Functions<a class="headerlink" href="#hash-functions" title="Link to this heading">#</a></h2>
 <p>Given a collection of items, a hash function that maps each item into a unique slot is referred to as a perfect hash function. If we know the items and the collection will never change, then it is possible to construct a perfect hash function (refer to the exercises for more about perfect hash functions).</p>
 <p>Unfortunately, given an arbitrary collection of items, there is no systematic way to construct a perfect hash function. Luckily, we do not need the hash function to be perfect to still gain performance efficiency.</p>
 <p>One way to always have a perfect hash function is to increase the size of the hash table so that each possible value in the item range can be accommodated. This guarantees that each item will have a unique slot. Although this is practical for small numbers of items, it is not feasible when the number of possible items is large.</p>
@@ -519,7 +549,7 @@ document.write(`
 </ol>
 </section>
 <section id="collision-resolution">
-<h2>Collision Resolution<a class="headerlink" href="#collision-resolution" title="Permalink to this heading">#</a></h2>
+<h2>Collision Resolution<a class="headerlink" href="#collision-resolution" title="Link to this heading">#</a></h2>
 <p>When two items hash to the same slot it is called <strong>collision</strong>, we must have a systematic method for placing the second item in the hash table. This process is called <strong>collision resolution</strong>. If the hash function is perfect, collisions will never occur. However, since this is often not possible, collision resolution becomes a very important part of hashing.</p>
 <p>The general name for this process of looking for another slot after a collision is rehashing. In general, <code class="docutils literal notranslate"><span class="pre">𝑟𝑒ℎ𝑎𝑠ℎ(𝑝𝑜𝑠)=(𝑝𝑜𝑠+𝑠𝑘𝑖𝑝)%𝑠𝑖𝑧𝑒𝑜𝑓𝑡𝑎𝑏𝑙𝑒</span></code>. It is important to note that the size of the “skip” must be such that all the slots in the table will eventually be visited. Otherwise, part of the table will be unused. To ensure this, it is often suggested that the table size be a prime number.</p>
 <ul class="simple">
@@ -529,10 +559,10 @@ document.write(`
 </ul>
 </section>
 <section id="hash-table-abstract-data-type">
-<h2>Hash Table Abstract Data Type<a class="headerlink" href="#hash-table-abstract-data-type" title="Permalink to this heading">#</a></h2>
+<h2>Hash Table Abstract Data Type<a class="headerlink" href="#hash-table-abstract-data-type" title="Link to this heading">#</a></h2>
 <p>The hash table abstract data type is defined as follows. The structure is an unordered collection of associations between a key and a data value. The keys in a hash table are all unique so that there is a one-to-one relationship between a key and a value.</p>
 <section id="hash-table-operations">
-<h3>Hash Table Operations<a class="headerlink" href="#hash-table-operations" title="Permalink to this heading">#</a></h3>
+<h3>Hash Table Operations<a class="headerlink" href="#hash-table-operations" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">HashTable()</span></code> Create a new, empty hash table. It returns an empty hash table collection.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">put(key,val)</span></code> Add a new key-value pair to the hash table. If the key is already in the hash table then replace the old value with the new value.</p></li>
@@ -544,7 +574,7 @@ document.write(`
 </section>
 </section>
 <section id="implementing-a-hash-table-in-python">
-<h2>Implementing a Hash Table in Python<a class="headerlink" href="#implementing-a-hash-table-in-python" title="Permalink to this heading">#</a></h2>
+<h2>Implementing a Hash Table in Python<a class="headerlink" href="#implementing-a-hash-table-in-python" title="Link to this heading">#</a></h2>
 <p>An abstract data type (ADT) when given a physical implementation then we refer to the implementation as a data structure.</p>
 <p>In any object-oriented programming language, the implementation of choice for an abstract data type such as a <strong>Hash Table</strong> is the creation of a new class. The Hash Table operations are implemented as methods. Further, to implement a Hash Table, which is a associative data type where you can store <code class="docutils literal notranslate"><span class="pre">key–data</span> <span class="pre">pairs</span></code>. The key is used to look up the associated data value.</p>
 <p>In Python, the Dictionary data types represent the implementation of hash tables. The Keys in the dictionary satisfy the following requirements. The keys of the dictionary are hashable i.e. the are generated by hashing function which generates unique result for each unique value supplied to the hash function.</p>
@@ -671,13 +701,19 @@ goat
 </div>
 </section>
 <section id="bonus-material">
-<h2>Bonus Material<a class="headerlink" href="#bonus-material" title="Permalink to this heading">#</a></h2>
+<h2>Bonus Material<a class="headerlink" href="#bonus-material" title="Link to this heading">#</a></h2>
 <ul>
 <li><p><strong>Modern Python Dictionaries - A confluence of a dozen great ideas</strong></p>
 <ul class="simple">
 <li><p>By Raymond Hettinger</p></li>
 </ul>
-<p><a class="reference external" href="http://www.youtube.com/watch?v=npw4s1QTmPg"><img alt="Modern Python Dictionaries" src="http://img.youtube.com/vi/npw4s1QTmPg/0.jpg" /></a></p>
+<p><a class="reference external" href="http://www.youtube.com/watch?v=npw4s1QTmPg" title="Modern Python Dictionaries"><img alt="Modern Python Dictionaries" src="http://img.youtube.com/vi/npw4s1QTmPg/0.jpg" /></a></p>
+</li>
+<li><p><strong>Python Hash Sets Explained &amp; Demonstrated - Computerphile</strong></p>
+<ul class="simple">
+<li><p>By  Computerphile</p></li>
+</ul>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=9oKpRTBfNXo" title="Python Hash Sets Explained &amp; Demonstrated"><img alt="Python Hash Sets Explained &amp; Demonstrated" src="http://img.youtube.com/vi/9oKpRTBfNXo/0.jpg" /></a></p>
 </li>
 </ul>
 </section>
@@ -708,11 +744,10 @@ goat
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="priority-queue.html"
@@ -732,10 +767,7 @@ goat
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -743,6 +775,7 @@ goat
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -779,6 +812,7 @@ By Ratan Kulshreshtha
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2021.
@@ -805,8 +839,8 @@ By Ratan Kulshreshtha
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
